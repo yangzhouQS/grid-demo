@@ -11,12 +11,13 @@ import { BaseAction } from "./BaseAction";
 import type { GridInternal } from "../../ts-types-internal";
 import { extend } from "../../internal/utils";
 import { isDisabledRecord } from "./action-utils";
+import { noop } from "@/tools/canvashelper";
 
 export class Action<T> extends BaseAction<T> {
   private _action: ActionListener;
   constructor(option: ActionOption = {}) {
     super(option);
-    this._action = option.action || ((): void => {});
+    this._action = option.action || noop;
   }
   get editable(): boolean {
     return false;

@@ -2,9 +2,9 @@ import {
   calcBasePosition,
   calcStartPosition,
   getFontSize,
-} from "../internal/canvases";
-import type { ColorDef } from "../ts-types";
-import type { PaddingOption } from "../internal/canvases";
+} from "@/internal/canvases";
+import type { ColorDef } from "@/ts-types";
+import type { PaddingOption } from "@/internal/canvases";
 const { ceil, PI } = Math;
 
 export function strokeColorsRect(
@@ -467,3 +467,10 @@ export type Canvashelper = {
   drawInlineImageRect: typeof drawInlineImageRect;
   strokeColorsRect: typeof strokeColorsRect;
 };
+
+/**
+ * noop function
+ */
+export function noop() {
+  //
+}
