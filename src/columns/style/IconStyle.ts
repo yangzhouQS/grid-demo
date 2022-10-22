@@ -1,4 +1,4 @@
-import type { IconStyleOption } from "@/ts-types";
+import { IconStyleOption } from "@/ts-types";
 import { Style } from "./Style";
 import { defaults } from "@/internal/utils";
 

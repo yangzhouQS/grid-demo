@@ -1,4 +1,4 @@
-import type { ListGridAPI, MessageObject } from "@/ts-types";
+import { ListGridAPI, MessageObject } from "@/ts-types";
 import { EventHandler } from "@/internal/EventHandler";
 import { createElement } from "@/internal/dom";
 

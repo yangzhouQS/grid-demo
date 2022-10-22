@@ -1,7 +1,7 @@
 import * as calc from "../internal/calc";
 import * as hiDPI from "../internal/hiDPI";
 import * as style from "../internal/style";
-import type {
+import {
   AfterSelectedCellEvent,
   AnyFunction,
   BeforeSelectedCellEvent,
@@ -17,28 +17,28 @@ import type {
   KeydownEvent,
   PasteCellEvent,
   PasteRangeBoxValues,
-} from "../ts-types";
+} from "@/ts-types";
 import {
   array,
   browser,
   event,
   isDescendantElement,
   isPromise,
-} from "../internal/utils";
+} from "@/internal/utils";
 
 import {
   normalizePasteValue,
   parsePasteRangeBoxValues,
-} from "../internal/paste-utils";
+} from "@/internal/paste-utils";
 import { DG_EVENT_TYPE } from "./DG_EVENT_TYPE";
-import { EventHandler } from "../internal/EventHandler";
+import { EventHandler } from "@/internal/EventHandler";
 import { EventTarget } from "./EventTarget";
-import { NumberMap } from "../internal/NumberMap";
-import { Rect } from "../internal/Rect";
-import { Scrollable } from "../internal/Scrollable";
-import { getFontSize } from "../internal/canvases";
+import { NumberMap } from "@/internal/NumberMap";
+import { Rect } from "@/internal/Rect";
+import { Scrollable } from "@/internal/Scrollable";
+import { getFontSize } from "@/internal/canvases";
 //protected symbol
-import { getProtectedSymbol } from "../internal/symbolManager";
+import { getProtectedSymbol } from "@/internal/symbolManager";
 
 const {
   /** @private */

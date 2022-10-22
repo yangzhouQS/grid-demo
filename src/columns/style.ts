@@ -1,4 +1,4 @@
-import type {
+import {
   BaseStyleOption,
   ButtonStyleOption,
   CheckStyleOption,
@@ -10,7 +10,7 @@ import type {
   NumberStyleOption,
   PercentCompleteBarStyleOption,
   StyleOption,
-} from "../ts-types";
+} from "@/ts-types";
 import { BaseStyle } from "./style/BaseStyle";
 import { ButtonStyle } from "./style/ButtonStyle";
 import { CheckStyle } from "./style/CheckStyle";

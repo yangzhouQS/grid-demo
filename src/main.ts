@@ -1,4 +1,4 @@
-import type * as TYPES from "./ts-types";
+import * as TYPES from "./ts-types";
 import * as columns from "./columns";
 import * as core from "./core";
 import * as data from "./data";
@@ -16,7 +16,7 @@ import {
   // ListGridConstructorOptions,
 } from "./ListGrid";
 import { GridCanvasHelper } from "./GridCanvasHelper";
-import type { Theme } from "./themes/theme";
+import { Theme } from "./themes/theme";
 
 export { getInternal as _getInternal } from "./get-internal";
 

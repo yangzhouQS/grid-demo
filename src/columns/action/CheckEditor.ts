@@ -1,4 +1,4 @@
-import type {
+import {
 	CellAddress,
 	EventListenerId,
 	LayoutObjectId,
@@ -12,8 +12,8 @@ import {
 } from "./action-utils";
 import { DG_EVENT_TYPE } from "@/core/DG_EVENT_TYPE";
 import { Editor } from "./Editor";
-import type { GridInternal } from "@/ts-types-internal";
-import type { RangePasteContext } from "./BaseAction";
+import { GridInternal } from "@/ts-types-internal";
+import { RangePasteContext } from "./BaseAction";
 import { animate } from "@/internal/animate";
 import { getCheckColumnStateId } from "@/internal/symbolManager";
 

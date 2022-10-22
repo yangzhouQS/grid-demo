@@ -1,5 +1,5 @@
-import type { CellContext, GridCanvasHelperAPI } from "@/ts-types";
-import type { DrawCellInfo, GridInternal } from "@/ts-types-internal";
+import { CellContext, GridCanvasHelperAPI } from "@/ts-types";
+import { DrawCellInfo, GridInternal } from "@/ts-types-internal";
 import { BaseColumn } from "./BaseColumn";
 import { RadioStyle } from "../style/RadioStyle";
 import { getRadioColumnStateId } from "@/internal/symbolManager";

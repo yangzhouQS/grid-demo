@@ -1,7 +1,7 @@
 import { columns } from "@/columns";
 import * as headerAction from "../../../header/action";
 import * as headerType from "../../../header/type";
-import type {
+import {
 	CellDefine,
 	ColumnData,
 	HeaderBodyLayoutDefine,
@@ -11,7 +11,7 @@ import type {
 	LayoutMapAPI,
 	WidthData,
 } from "../api";
-import type { CellRange, LayoutObjectId } from "@/ts-types";
+import { CellRange, LayoutObjectId } from "@/ts-types";
 import { EmptyDataCache } from "./utils";
 
 interface HasSpans {

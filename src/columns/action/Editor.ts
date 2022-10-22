@@ -1,4 +1,4 @@
-import type { EditorOption, RecordBoolean } from "@/ts-types";
+import { EditorOption, RecordBoolean } from "@/ts-types";
 import { BaseAction } from "./BaseAction";
 
 export abstract class Editor<T> extends BaseAction<T> {

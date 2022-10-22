@@ -1,11 +1,11 @@
-import type {
+import {
   AnyFunction,
   ColorDef,
   MaybePromise,
   MaybePromiseOrUndef,
   RectProps,
 } from "./base";
-import type {
+import {
   AnyListener,
   DrawGridEventHandlersEventMap,
   DrawGridEventHandlersReturnMap,
@@ -13,17 +13,17 @@ import type {
   ListGridEventHandlersEventMap,
   ListGridEventHandlersReturnMap,
 } from "./events";
-import type { CellAddress, CellRange, FieldData, FieldDef } from "./grid";
-import type {
+import { CellAddress, CellRange, FieldData, FieldDef } from "./grid";
+import {
   ColorPropertyDefine,
   ColorsPropertyDefine,
   FontPropertyDefine,
   LineClamp,
   TextOverflow,
 } from "./define";
-import type { ColumnDefine } from "../ListGrid";
-import type { RequiredThemeDefine } from "./plugin";
-import type { SimpleColumnIconOption } from "../ts-types-internal/data";
+import { ColumnDefine } from "../ListGrid";
+import { RequiredThemeDefine } from "./plugin";
+import { SimpleColumnIconOption } from "@/ts-types-internal";
 
 export type LayoutObjectId = number | string | symbol;
 

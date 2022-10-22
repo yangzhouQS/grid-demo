@@ -1,6 +1,6 @@
 import { extend, getIgnoreCase } from "./internal/utils";
 import { Theme } from "./themes/theme";
-import type { ThemeDefine } from "./ts-types";
+import { ThemeDefine } from "./ts-types";
 import basicTheme from "./themes/BASIC";
 import materialDesignTheme from "./themes/MATERIAL_DESIGN";
 import { themes as plugins } from "./plugins/themes";

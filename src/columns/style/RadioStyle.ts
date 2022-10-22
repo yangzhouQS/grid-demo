@@ -1,4 +1,4 @@
-import type { ColorDef, RadioStyleOption } from "@/ts-types";
+import { ColorDef, RadioStyleOption } from "@/ts-types";
 import { StdBaseStyle } from "./StdBaseStyle";
 import { defaults } from "@/internal/utils";
 

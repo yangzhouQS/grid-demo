@@ -1,4 +1,4 @@
-import type { CheckStyleOption, ColorDef } from "@/ts-types";
+import { CheckStyleOption, ColorDef } from "@/ts-types";
 import { StdBaseStyle } from "./StdBaseStyle";
 import { defaults } from "@/internal/utils";
 

@@ -1,8 +1,8 @@
 import { columns } from "@/columns";
 import * as headerAction from "../../../header/action";
 import * as headerType from "../../../header/type";
-import type { CellRange, LayoutObjectId } from "@/ts-types";
-import type {
+import { CellRange, LayoutObjectId } from "@/ts-types";
+import {
 	ColumnData,
 	ColumnDefine,
 	GroupHeaderDefine,

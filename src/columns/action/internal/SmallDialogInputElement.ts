@@ -1,4 +1,4 @@
-import type { ListGridAPI, MaybePromise } from "@/ts-types";
+import { ListGridAPI, MaybePromise } from "@/ts-types";
 import { browser, event, then } from "@/internal/utils";
 import { EventHandler } from "@/internal/EventHandler";
 import { createElement } from "@/internal/dom";

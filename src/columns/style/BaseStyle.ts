@@ -1,4 +1,4 @@
-import type { BaseStyleOption, ColorDef, ColumnStyle } from "@/ts-types";
+import { BaseStyleOption, ColorDef, ColumnStyle } from "@/ts-types";
 import { EventTarget } from "@/core/EventTarget";
 
 const STYLE_EVENT_TYPE = {

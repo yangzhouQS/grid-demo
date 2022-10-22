@@ -1,5 +1,5 @@
 import { EventHandler } from "@/internal/EventHandler";
-import type { ListGridAPI } from "@/ts-types";
+import { ListGridAPI } from "@/ts-types";
 import { createElement } from "@/internal/dom";
 
 const CLASSNAME = "cheetah-grid__tooltip-element";

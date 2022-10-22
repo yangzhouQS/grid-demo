@@ -1,8 +1,8 @@
-import type {
+import {
 	MessageHandler as Base,
 	DrawCellInfo,
 } from "../../ts-types-internal";
-import type {
+import {
 	CellContext,
 	ColumnStyle,
 	GridCanvasHelperAPI,
@@ -10,7 +10,7 @@ import type {
 	Message,
 	MessageObject,
 } from "@/ts-types";
-import type { BaseMessage } from "./BaseMessage";
+import { BaseMessage } from "./BaseMessage";
 import { ErrorMessage } from "./ErrorMessage";
 import { InfoMessage } from "./InfoMessage";
 import { LG_EVENT_TYPE } from "@/list-grid/LG_EVENT_TYPE";

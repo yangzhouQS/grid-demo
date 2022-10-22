@@ -1,9 +1,9 @@
-import type {
+import {
   CellAddress,
   EventListenerId,
   LayoutObjectId,
 } from "@/ts-types";
-import type { CheckHeaderState, GridInternal } from "@/ts-types-internal";
+import { CheckHeaderState, GridInternal } from "@/ts-types-internal";
 import { bindCellClickAction, bindCellKeyAction } from "./actionBind";
 import { BaseAction } from "./BaseAction";
 import { animate } from "@/internal/animate";

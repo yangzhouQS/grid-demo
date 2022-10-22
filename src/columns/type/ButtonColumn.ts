@@ -1,15 +1,15 @@
 import * as utils from "./columnUtils";
-import type {
+import {
   ButtonColumnOption,
   CellContext,
   GridCanvasHelperAPI,
   MaybePromise,
-} from "../../ts-types";
-import type { DrawCellInfo, GridInternal } from "../../ts-types-internal";
+} from "@/ts-types";
+import { DrawCellInfo, GridInternal } from "@/ts-types-internal";
 import { ButtonStyle } from "../style/ButtonStyle";
 import { Column } from "./Column";
-import { cellInRange } from "../../internal/utils";
-import { getButtonColumnStateId } from "../../internal/symbolManager";
+import { cellInRange } from "@/internal/utils";
+import { getButtonColumnStateId } from "@/internal/symbolManager";
 
 const BUTTON_COLUMN_STATE_ID = getButtonColumnStateId();
 

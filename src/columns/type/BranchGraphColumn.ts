@@ -1,4 +1,4 @@
-import type {
+import {
   BranchGraphColumnOption,
   BranchGraphCommand,
   CellContext,
@@ -8,12 +8,12 @@ import type {
   ListGridAPI,
   MaybePromise,
   MaybePromiseOrUndef,
-} from "../../ts-types";
-import type { DrawCellInfo, GridInternal } from "../../ts-types-internal";
-import { getOrApply, isPromise, obj } from "../../internal/utils";
+} from "@/ts-types";
+import { DrawCellInfo, GridInternal } from "@/ts-types-internal";
+import { getOrApply, isPromise, obj } from "@/internal/utils";
 import { BaseColumn } from "./BaseColumn";
 import { BranchGraphStyle } from "../style/BranchGraphStyle";
-import { getBranchGraphColumnStateId } from "../../internal/symbolManager";
+import { getBranchGraphColumnStateId } from "@/internal/symbolManager";
 
 const _ = getBranchGraphColumnStateId();
 

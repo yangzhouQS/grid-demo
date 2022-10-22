@@ -1,4 +1,4 @@
-import type { ColorDef, SortHeaderStyleOption } from "@/ts-types";
+import { ColorDef, SortHeaderStyleOption } from "@/ts-types";
 import { MultilineTextHeaderStyle } from "./MultilineTextHeaderStyle";
 
 let defaultStyle: SortHeaderStyle;

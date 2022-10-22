@@ -1,4 +1,4 @@
-import type { FieldDef, MaybePromise, MaybePromiseOrUndef } from "@/ts-types";
+import { FieldDef, MaybePromise, MaybePromiseOrUndef } from "@/ts-types";
 import { each, isPromise } from "@/internal/utils";
 import { DataSource } from "./DataSource";
 import { EventHandler } from "@/internal/EventHandler";

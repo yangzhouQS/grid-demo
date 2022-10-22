@@ -1,4 +1,4 @@
-import type { LineClamp, MultilineTextStyleOption } from "@/ts-types";
+import { LineClamp, MultilineTextStyleOption } from "@/ts-types";
 import { Style } from "./Style";
 import { defaults } from "@/internal/utils";
 

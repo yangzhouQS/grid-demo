@@ -1,5 +1,5 @@
 import * as utils from "./columnUtils";
-import type {
+import {
   CellContext,
   ColumnMenuItemOptions,
   GridCanvasHelperAPI,
@@ -8,7 +8,7 @@ import type {
   SimpleColumnMenuItemOption,
 } from "@/ts-types";
 import { BaseColumn } from "./BaseColumn";
-import type { DrawCellInfo } from "@/ts-types-internal";
+import { DrawCellInfo } from "@/ts-types-internal";
 import { MenuStyle } from "../style/MenuStyle";
 import { normalize } from "@/internal/menu-items";
 

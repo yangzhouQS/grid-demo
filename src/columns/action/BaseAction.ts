@@ -1,4 +1,4 @@
-import type {
+import {
 	BaseActionOption,
 	CellAddress,
 	EventListenerId,

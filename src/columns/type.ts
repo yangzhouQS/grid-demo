@@ -1,4 +1,4 @@
-import type {
+import {
   BaseColumnOption,
   BranchGraphColumnOption,
   ButtonColumnOption,
@@ -8,7 +8,7 @@ import type {
   NumberColumnOption,
   PercentCompleteBarColumnOption,
 } from "@/ts-types";
-import type { BaseColumn } from "./type/BaseColumn";
+import { BaseColumn } from "./type/BaseColumn";
 import { BranchGraphColumn } from "./type/BranchGraphColumn";
 import { ButtonColumn } from "./type/ButtonColumn";
 import { CheckColumn } from "./type/CheckColumn";

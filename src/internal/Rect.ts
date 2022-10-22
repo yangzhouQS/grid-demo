@@ -1,4 +1,4 @@
-import type { RectProps } from "@/ts-types";
+import { RectProps } from "@/ts-types";
 
 export class Rect implements RectProps {
   private _left: number;

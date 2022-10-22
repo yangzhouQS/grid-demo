@@ -3,8 +3,8 @@ import {
   calcStartPosition,
   getFontSize,
 } from "@/internal/canvases";
-import type { ColorDef } from "@/ts-types";
-import type { PaddingOption } from "@/internal/canvases";
+import { ColorDef } from "@/ts-types";
+import { PaddingOption } from "@/internal/canvases";
 const { ceil, PI } = Math;
 
 export function strokeColorsRect(

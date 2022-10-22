@@ -1,5 +1,5 @@
 import { BaseStyle } from "./BaseStyle";
-import type { StdBaseStyleOption } from "@/ts-types";
+import { StdBaseStyleOption } from "@/ts-types";
 
 let defaultStyle: StdBaseStyle;
 export class StdBaseStyle extends BaseStyle {

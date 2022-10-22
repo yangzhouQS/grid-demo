@@ -1,4 +1,4 @@
-import type { ListGridAPI, RecordBoolean } from "@/ts-types";
+import { ListGridAPI, RecordBoolean } from "@/ts-types";
 import { isPromise } from "@/internal/utils";
 
 export function isDisabledRecord<T>(

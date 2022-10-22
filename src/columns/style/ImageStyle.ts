@@ -1,4 +1,4 @@
-import type { ImageStyleOption } from "@/ts-types";
+import { ImageStyleOption } from "@/ts-types";
 import { StdBaseStyle } from "./StdBaseStyle";
 import { defaults } from "@/internal/utils";
 

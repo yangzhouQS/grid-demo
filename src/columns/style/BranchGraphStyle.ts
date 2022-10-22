@@ -1,4 +1,4 @@
-import type { BranchGraphStyleOption, ColorDef } from "@/ts-types";
+import { BranchGraphStyleOption, ColorDef } from "@/ts-types";
 import { BaseStyle } from "./BaseStyle";
 let defaultStyle: BranchGraphStyle;
 

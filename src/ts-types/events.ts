@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
-import type { CellAddress, CellRange, FieldDef } from "./grid";
-import type { AnyFunction } from "./base";
-import type { ColumnDefine } from "../ListGrid";
+import { CellAddress, CellRange, FieldDef } from "./grid";
+import { AnyFunction } from "./base";
+import { ColumnDefine } from "../ListGrid";
 
 export type KeyboardEventListener = (e: KeyboardEvent) => void;
 export type AnyListener = AnyFunction;

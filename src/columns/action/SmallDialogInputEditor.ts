@@ -1,10 +1,10 @@
-import type {
+import {
 	CellAddress,
 	ListGridAPI,
 	MaybePromise,
 	SmallDialogInputEditorOption,
 } from "@/ts-types";
-import type { GridInternal, InputEditorState } from "@/ts-types-internal";
+import { GridInternal, InputEditorState } from "@/ts-types-internal";
 import { BaseInputEditor } from "./BaseInputEditor";
 import { SmallDialogInputElement } from "./internal/SmallDialogInputElement";
 import { getSmallDialogInputEditorStateId } from "@/internal/symbolManager";

@@ -1,11 +1,11 @@
 import * as icons from "../../internal/icons";
-import type {
+import {
   CellContext,
   ColumnIconOption,
   GridCanvasHelperAPI,
   MaybePromise,
 } from "@/ts-types";
-import type { SimpleColumnIconOption } from "@/ts-types-internal";
+import { SimpleColumnIconOption } from "@/ts-types-internal";
 import { isPromise } from "@/internal/utils";
 
 export function loadIcons(

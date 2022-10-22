@@ -1,4 +1,4 @@
-import type { CanvasOperations } from "./internal";
+import { CanvasOperations } from "./internal";
 
 /*eslint new-cap: "off"*/
 

@@ -1,11 +1,11 @@
-import type {
+import {
   BaseActionOption,
   HeaderActionOption,
   SortHeaderActionOption,
   SortOption,
 } from "@/ts-types";
 import { BaseAction } from "./action/BaseAction";
-import type { BaseHeaderDefine } from "@/list-grid/layout-map";
+import { BaseHeaderDefine } from "@/list-grid/layout-map";
 import { CheckHeaderAction } from "./action/CheckHeaderAction";
 import { SortHeaderAction } from "./action/SortHeaderAction";
 

@@ -1,4 +1,4 @@
-import type { MaybePromise } from "@/ts-types";
+import { MaybePromise } from "@/ts-types";
 import { isPromise } from "./utils";
 
 function createArray<T>(get: (i: number) => T, length: number): T[] {

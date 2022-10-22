@@ -1,7 +1,7 @@
 import * as path2DManager from "../internal/path2DManager";
-import type { AnyFunction, ColorDef } from "@/ts-types";
+import { AnyFunction, ColorDef } from "@/ts-types";
 import { Inline } from "./Inline";
-import type { InlineDrawOption } from "./Inline";
+import { InlineDrawOption } from "./Inline";
 import { calcStartPosition } from "@/internal/canvases";
 
 export type InlinePath2DConstructorOption = {

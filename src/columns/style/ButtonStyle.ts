@@ -1,4 +1,4 @@
-import type { ButtonStyleOption, ColorDef } from "@/ts-types";
+import { ButtonStyleOption, ColorDef } from "@/ts-types";
 import { Style } from "./Style";
 import { defaults } from "@/internal/utils";
 

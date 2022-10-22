@@ -1,5 +1,5 @@
 import * as styleContents from "../style";
-import type {
+import {
   BaseColumnOption,
   CellAddress,
   CellContext,
@@ -10,16 +10,16 @@ import type {
   ListGridAPI,
   MaybePromise,
   Message,
-} from "../../ts-types";
-import type {
+} from "@/ts-types";
+import {
   ColumnFadeinState,
   DrawCellInfo,
   GridInternal,
-} from "../../ts-types-internal";
-import { isPromise, obj } from "../../internal/utils";
+} from "@/ts-types-internal";
+import { isPromise, obj } from "@/internal/utils";
 import { BaseStyle } from "../style/BaseStyle";
-import { animate } from "../../internal/animate";
-import { getColumnFadeinStateId } from "../../internal/symbolManager";
+import { animate } from "@/internal/animate";
+import { getColumnFadeinStateId } from "@/internal/symbolManager";
 
 const { setReadonly } = obj;
 const COLUMN_FADEIN_STATE_ID = getColumnFadeinStateId();

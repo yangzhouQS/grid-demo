@@ -1,4 +1,4 @@
-import type {
+import {
   ColumnIconOption,
   FontIcon,
   ImageIcon,
@@ -6,7 +6,7 @@ import type {
   PathIcon,
   SvgIcon,
 } from "@/ts-types";
-import type { SimpleColumnIconOption } from "@/ts-types-internal";
+import { SimpleColumnIconOption } from "@/ts-types-internal";
 
 type ColumnIconArrayOption = {
   content?: (string | null)[];

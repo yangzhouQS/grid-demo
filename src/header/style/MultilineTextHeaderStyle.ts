@@ -1,4 +1,4 @@
-import type { LineClamp, MultilineTextHeaderStyleOption } from "@/ts-types";
+import { LineClamp, MultilineTextHeaderStyleOption } from "@/ts-types";
 import { Style } from "./Style";
 
 let defaultStyle: MultilineTextHeaderStyle;

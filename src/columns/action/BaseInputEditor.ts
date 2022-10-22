@@ -1,4 +1,4 @@
-import type {
+import {
   CellAddress,
   EditorOption,
   EventListenerId,

@@ -1,5 +1,5 @@
 import * as styleContents from "../style";
-import type {
+import {
   CellAddress,
   CellContext,
   EventListenerId,
@@ -8,8 +8,8 @@ import type {
   ListGridAPI,
 } from "@/ts-types";
 import { BaseStyle } from "../style/BaseStyle";
-import type { DrawCellInfo } from "@/ts-types-internal";
-import type { GridCanvasHelper } from "@/GridCanvasHelper";
+import { DrawCellInfo } from "@/ts-types-internal";
+import { GridCanvasHelper } from "@/GridCanvasHelper";
 
 export abstract class BaseHeader<T> {
   constructor(_options = {}) {

@@ -1,6 +1,6 @@
 import { isPromise, then } from "@/internal/utils";
 import { InlineImage } from "./InlineImage";
-import type { MaybePromise } from "@/ts-types";
+import { MaybePromise } from "@/ts-types";
 
 function buildSvgDataUrl(svg: string | Node): string {
   const data =

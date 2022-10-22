@@ -1,8 +1,8 @@
 import { BaseHeader } from "./type/BaseHeader";
-import type { BaseHeaderDefine } from "@/list-grid/layout-map";
+import { BaseHeaderDefine } from "@/list-grid/layout-map";
 import { CheckHeader } from "./type/CheckHeader";
 import { Header } from "./type/Header";
-import type { HeaderTypeOption } from "@/ts-types";
+import { HeaderTypeOption } from "@/ts-types";
 import { MultilineTextHeader } from "./type/MultilineTextHeader";
 import { SortHeader } from "./type/SortHeader";
 

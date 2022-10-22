@@ -1,5 +1,5 @@
-import type { LineClamp, TextOverflow } from "../define";
-import type { ColorDef } from "../base";
+import { LineClamp, TextOverflow } from "../define";
+import { ColorDef } from "../base";
 
 export interface ColumnStyle {
   bgColor?: ColorDef;

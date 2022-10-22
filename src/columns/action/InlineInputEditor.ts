@@ -1,9 +1,9 @@
-import type {
+import {
   CellAddress,
   InlineInputEditorOption,
   ListGridAPI,
 } from "@/ts-types";
-import type { GridInternal, InputEditorState } from "@/ts-types-internal";
+import { GridInternal, InputEditorState } from "@/ts-types-internal";
 import { BaseInputEditor } from "./BaseInputEditor";
 import { InlineInputElement } from "./internal/InlineInputElement";
 import { getInlineInputEditorStateId } from "@/internal/symbolManager";

@@ -1,4 +1,4 @@
-import type { ColorPropertyDefine, ColorsPropertyDefine } from "./define";
+import { ColorPropertyDefine, ColorsPropertyDefine } from "./define";
 
 // ****** Plugin Icons *******
 export interface IconDefine {

@@ -1,6 +1,6 @@
 /*eslint no-bitwise:0*/
 
-import type { StylePropertyFunctionArg, ThemeDefine } from "@/ts-types";
+import { StylePropertyFunctionArg, ThemeDefine } from "@/ts-types";
 
 function DEFAULT_BG_COLOR(args: StylePropertyFunctionArg): string {
   const { row, grid } = args;

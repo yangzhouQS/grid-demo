@@ -1,5 +1,5 @@
 import * as messageUtils from "./messageUtils";
-import type {
+import {
 	CellContext,
 	ColumnStyle,
 	GridCanvasHelperAPI,
@@ -7,7 +7,7 @@ import type {
 	MessageObject,
 } from "@/ts-types";
 import { BaseMessage } from "./BaseMessage";
-import type { DrawCellInfo } from "@/ts-types-internal";
+import { DrawCellInfo } from "@/ts-types-internal";
 import { WarningMessageElement } from "./internal/WarningMessageElement";
 import { cellInRange } from "@/internal/utils";
 

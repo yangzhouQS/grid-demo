@@ -1,6 +1,6 @@
-import type * as headerAction from "../../header/action";
-import type * as headerType from "../../header/type";
-import type {
+import * as headerAction from "../../header/action";
+import * as headerType from "../../header/type";
+import {
   CellRange,
   ColumnActionOption,
   ColumnIconOption,
@@ -14,9 +14,9 @@ import type {
   ListGridAPI,
   Message,
 } from "@/ts-types";
-import type { BaseAction } from "@/columns/action";
-import type { BaseColumn } from "@/columns/type/BaseColumn";
-import type { BaseStyle as HeaderBaseStyle } from "@/header/style";
+import { BaseAction } from "@/columns/action";
+import { BaseColumn } from "@/columns/type/BaseColumn";
+import { BaseStyle as HeaderBaseStyle } from "@/header/style";
 
 export type OldSortOption<T> =
   | boolean

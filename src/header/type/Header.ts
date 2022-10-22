@@ -1,8 +1,8 @@
 import * as utils from "../../columns/type/columnUtils";
-import type { CellContext, ListGridAPI } from "@/ts-types";
+import { CellContext, ListGridAPI } from "@/ts-types";
 import { BaseHeader } from "./BaseHeader";
-import type { DrawCellInfo } from "@/ts-types-internal";
-import type { GridCanvasHelper } from "@/GridCanvasHelper";
+import { DrawCellInfo } from "@/ts-types-internal";
+import { GridCanvasHelper } from "@/GridCanvasHelper";
 import { Style } from "../style/Style";
 
 export class Header<T> extends BaseHeader<T> {

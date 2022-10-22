@@ -3,7 +3,7 @@ import * as canvashelper from "./tools/canvashelper";
 import * as fonts from "./internal/fonts";
 import * as inlineUtils from "./element/inlines";
 import * as themes from "./themes";
-import type {
+import {
   CellContext,
   ColorDef,
   ColorPropertyDefine,
@@ -17,7 +17,7 @@ import type {
   StylePropertyFunctionArg,
   TextOverflow,
 } from "./ts-types";
-import type { Inline, InlineDrawOption } from "./element/Inline";
+import { Inline, InlineDrawOption } from "./element/Inline";
 import { calcStartPosition, getFontSize } from "./internal/canvases";
 import {
   cellEquals,
@@ -27,10 +27,10 @@ import {
   style,
 } from "./internal/utils";
 import { InlineDrawer } from "./element/InlineDrawer";
-import type { PaddingOption } from "./internal/canvases";
-import type { RGBA } from "./internal/color";
+import { PaddingOption } from "./internal/canvases";
+import { RGBA } from "./internal/color";
 import { Rect } from "./internal/Rect";
-import type { SimpleColumnIconOption } from "./ts-types-internal";
+import { SimpleColumnIconOption } from "./ts-types-internal";
 import { colorToRGB } from "./internal/color";
 
 const { toBoxArray } = style;

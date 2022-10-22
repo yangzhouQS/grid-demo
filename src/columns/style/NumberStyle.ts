@@ -1,4 +1,4 @@
-import type { NumberStyleOption } from "@/ts-types";
+import { NumberStyleOption } from "@/ts-types";
 import { Style } from "./Style";
 import { defaults } from "@/internal/utils";
 

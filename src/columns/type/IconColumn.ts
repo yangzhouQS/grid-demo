@@ -1,5 +1,5 @@
 import * as icons from "../../internal/icons";
-import type {
+import {
 	CellContext,
 	ColumnIconOption,
 	GridCanvasHelperAPI,
@@ -7,7 +7,7 @@ import type {
 	ListGridAPI,
 } from "@/ts-types";
 import { Column } from "./Column";
-import type { DrawCellInfo } from "@/ts-types-internal";
+import { DrawCellInfo } from "@/ts-types-internal";
 import { IconStyle } from "../style/IconStyle";
 
 function repeatArray(

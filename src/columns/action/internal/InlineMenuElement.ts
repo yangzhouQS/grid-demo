@@ -1,4 +1,4 @@
-import type {
+import {
   ColumnMenuItemOption,
   ListGridAPI,
   RectProps,
@@ -11,10 +11,10 @@ import {
   findNextSiblingFocusable,
   findPrevSiblingFocusable,
   isFocusable,
-} from "../../../internal/dom";
-import { EventHandler } from "../../../internal/EventHandler";
-import type { Rect } from "../../../internal/Rect";
-import { event } from "../../../internal/utils";
+} from "@/internal/dom";
+import { EventHandler } from "@/internal/EventHandler";
+import { Rect } from "@/internal/Rect";
+import { event } from "@/internal/utils";
 
 const KEY_TAB = 9;
 const KEY_ENTER = 13;

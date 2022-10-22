@@ -1,7 +1,7 @@
 import * as icons from "./internal/icons";
 import * as themes from "./themes";
 import { CachedDataSource, DataSource } from "./data";
-import type {
+import {
 	CellAddress,
 	CellContext,
 	CellRange,
@@ -51,11 +51,11 @@ import {
 	MultiLayoutMap, SimpleHeaderLayoutMap
 } from "./list-grid/layout-map";
 
-import type {
+import {
 	DrawGridConstructorOptions,
 	DrawGridProtected,
 } from "./core/DrawGrid";
-// import type { LayoutDefine, LayoutMapAPI } from "./list-grid/layout-map";
+// import { LayoutDefine, LayoutMapAPI } from "./list-grid/layout-map";
 import { MessageHandler, hasMessage } from "./columns/message/MessageHandler";
 import {
 	cellEquals,
@@ -65,16 +65,16 @@ import {
 	omit,
 	then,
 } from "./internal/utils";
-import type { BaseColumn } from "./columns/type/BaseColumn";
+import { BaseColumn } from "./columns/type/BaseColumn";
 import { BaseStyle } from "./columns/style";
-// import type { ColumnData } from "./list-grid/layout-map/api";
-import type { DrawCellInfo } from "./ts-types-internal";
+// import { ColumnData } from "./list-grid/layout-map/api";
+import { DrawCellInfo } from "./ts-types-internal";
 import { DrawGrid } from "./core/DrawGrid";
 import { GridCanvasHelper } from "./GridCanvasHelper";
 import { BaseStyle as HeaderBaseStyle } from "./header/style";
 import { LG_EVENT_TYPE } from "./list-grid/LG_EVENT_TYPE";
 import { Rect } from "./internal/Rect";
-import type { Theme } from "./themes/theme";
+import { Theme } from "./themes/theme";
 import { TooltipHandler } from "./tooltip/TooltipHandler";
 //protected symbol
 import { getProtectedSymbol } from "./internal/symbolManager";

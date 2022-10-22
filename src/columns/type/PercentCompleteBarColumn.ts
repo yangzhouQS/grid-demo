@@ -1,4 +1,4 @@
-import type {
+import {
 	CellContext,
 	GridCanvasHelperAPI,
 	ListGridAPI,
@@ -6,7 +6,7 @@ import type {
 } from "@/ts-types";
 import { getOrApply, str } from "@/internal/utils";
 import { Column } from "./Column";
-import type { DrawCellInfo } from "@/ts-types-internal";
+import { DrawCellInfo } from "@/ts-types-internal";
 import { PercentCompleteBarStyle } from "../style/PercentCompleteBarStyle";
 
 const MARGIN = 2;

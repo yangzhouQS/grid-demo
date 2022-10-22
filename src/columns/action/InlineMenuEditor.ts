@@ -1,4 +1,4 @@
-import type {
+import {
 	CellAddress,
 	ColumnMenuItemOption,
 	ColumnTypeAPI,
@@ -8,7 +8,7 @@ import type {
 	ListGridAPI,
 	SimpleColumnMenuItemOption,
 } from "@/ts-types";
-import type { GridInternal, InputEditorState } from "@/ts-types-internal";
+import { GridInternal, InputEditorState } from "@/ts-types-internal";
 import {
 	array,
 	cellEquals,
@@ -22,7 +22,7 @@ import { DG_EVENT_TYPE } from "@/core/DG_EVENT_TYPE";
 import { Editor } from "./Editor";
 import { InlineMenuElement } from "./internal/InlineMenuElement";
 import { MenuColumn } from "../type";
-import type { RangePasteContext } from "./BaseAction";
+import { RangePasteContext } from "./BaseAction";
 import { getInlineMenuEditorStateId } from "@/internal/symbolManager";
 import { normalizeToFn } from "@/internal/menu-items";
 

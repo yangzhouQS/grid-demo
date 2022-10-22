@@ -1,4 +1,4 @@
-import type { AnyFunction } from "@/ts-types";
+import { AnyFunction } from "@/ts-types";
 //see https://github.com/typekit/webfontloader
 
 //http://defghi1977.html.xdomain.jp/tech/canvasMemo/canvasMemo.htm

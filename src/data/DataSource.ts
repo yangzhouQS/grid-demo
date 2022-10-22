@@ -1,5 +1,5 @@
 import * as sort from "../internal/sort";
-import type {
+import {
   DataSourceAPI,
   FieldAssessor,
   FieldData,
@@ -18,7 +18,7 @@ import {
   obj,
 } from "@/internal/utils";
 import { EventTarget } from "@/core/EventTarget";
-import type { PromiseCacheValue } from "./internal/types";
+import { PromiseCacheValue } from "./internal/types";
 
 /** @private */
 function isFieldAssessor<T>(field: FieldDef<T>): field is FieldAssessor<T> {
