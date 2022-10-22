@@ -35,8 +35,11 @@ export interface BaseHeaderDefine<T> {
   headerAction?: HeaderActionOption | headerAction.BaseAction<T> | null;
   sort?: OldSortOption<T>;
 }
+
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface HeaderDefine<T> extends BaseHeaderDefine<T> {}
+export interface HeaderDefine<T> extends BaseHeaderDefine<T> {
+}
+
 export interface ColumnDefine<T> extends BaseHeaderDefine<T> {
   field?: FieldDef<T>;
   icon?: ColumnIconOption<T> | ColumnIconOption<T>[];
@@ -67,6 +70,7 @@ export interface WidthData {
   minWidth?: number | string;
   maxWidth?: number | string;
 }
+
 export interface ColumnData<T> extends WidthData {
   id: LayoutObjectId;
   field?: FieldDef<T>;
@@ -87,6 +91,7 @@ export interface ColumnData<T> extends WidthData {
 export interface GroupHeaderDefine<T> extends HeaderDefine<T> {
   columns: HeadersDefine<T>;
 }
+
 export type HeadersDefine<T> = (GroupHeaderDefine<T> | ColumnDefine<T>)[];
 
 // Advanced layout
@@ -120,11 +125,17 @@ interface LayoutMapAPI<T> {
   readonly columnObjects: ColumnData<T>[];
 
   getHeader(col: number, row: number): HeaderData<T>;
+
   getBody(col: number, row: number): ColumnData<T>;
+
   getCellId(col: number, row: number): LayoutObjectId;
+
   getCellRange(col: number, row: number): CellRange;
+
   getBodyLayoutRangeById(id: LayoutObjectId): CellRange;
+
   getRecordIndexByRow(row: number): number;
+
   getRecordStartRowByRecordIndex(index: number): number;
 }
 

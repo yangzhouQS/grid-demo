@@ -13,7 +13,7 @@ import {
   HeaderDefine,
   HeadersDefine,
   ListGrid,
-  ListGridConstructorOptions,
+  // ListGridConstructorOptions,
 } from "./ListGrid";
 import { GridCanvasHelper } from "./GridCanvasHelper";
 import type { Theme } from "./themes/theme";
@@ -35,11 +35,12 @@ export {
   // impl Grids
   ListGrid,
   // ListGrid types
-  ListGridConstructorOptions,
-  HeadersDefine,
-  ColumnDefine,
-  HeaderDefine,
-  GroupHeaderDefine,
+  // ListGridConstructorOptions,
+  // HeadersDefine,
+  // ColumnDefine,
+  // HeaderDefine,
+  // GroupHeaderDefine,
+
   // objects
   columns,
   headers,

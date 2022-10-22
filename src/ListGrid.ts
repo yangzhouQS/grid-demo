@@ -304,8 +304,8 @@ function _onDrawValue<T>(
   const helper = grid[_].gridCanvasHelper;
 
   const drawCellBg = ({
-    bgColor,
-  }: { bgColor?: ColorPropertyDefine } = {}): void => {
+                        bgColor,
+                      }: { bgColor?: ColorPropertyDefine } = {}): void => {
     const fillOpt = {
       fillColor: bgColor,
     };
@@ -340,8 +340,8 @@ function _onDrawValue<T>(
   };
 
   const drawCellBase = ({
-    bgColor,
-  }: { bgColor?: ColorPropertyDefine } = {}): void => {
+                          bgColor,
+                        }: { bgColor?: ColorPropertyDefine } = {}): void => {
     drawCellBg({ bgColor });
     drawCellBorder();
   };
@@ -863,10 +863,9 @@ interface ListGridProtected<T> extends DrawGridProtected {
   allowRangePaste: boolean;
 }
 
-export { ListGridProtected };
+// export { ListGridProtected };
 
-export interface ListGridConstructorOptions<T>
-  extends DrawGridConstructorOptions {
+export interface ListGridConstructorOptions<T> extends DrawGridConstructorOptions {
   /**
    * Simple header property
    */
@@ -935,7 +934,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
    * @param options Constructor options
    */
   constructor(options: ListGridConstructorOptions<T> = {}) {
-    super(omit(options, ["colCount", "rowCount", "frozenRowCount"]));
+    super(omit(options, [ "colCount", "rowCount", "frozenRowCount" ]));
     const protectedSpace = this[_];
     protectedSpace.header = options.header || [];
     protectedSpace.layout = options.layout || [];
@@ -1160,10 +1159,10 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
       sortState != null
         ? sortState
         : {
-            col: -1,
-            row: -1,
-            order: undefined,
-          });
+          col: -1,
+          row: -1,
+          order: undefined,
+        });
 
     let newField;
     if (newState.col >= 0 && newState.row >= 0) {
@@ -1491,11 +1490,9 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     text: string,
     test?: (data: SetPasteValueTestData<T>) => boolean
   ): void {
-    _onRangePaste.call<
-      ListGrid<T>,
-      [string, (data: SetPasteValueTestData<T>) => boolean],
-      void
-    >(this, text, test as (data: SetPasteValueTestData<T>) => boolean);
+    _onRangePaste.call<ListGrid<T>,
+      [ string, (data: SetPasteValueTestData<T>) => boolean ],
+      void>(this, text, test as (data: SetPasteValueTestData<T>) => boolean);
   }
 
   getHeaderValue(col: number, row: number): any | undefined {
@@ -1548,7 +1545,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
         return;
       }
       event.cancel(e.event);
-      _onRangePaste.call<ListGrid<T>, [string], void>(this, e.normalizeValue);
+      _onRangePaste.call<ListGrid<T>, [ string ], void>(this, e.normalizeValue);
     });
     grid.listen(LG_EVENT_TYPE.DELETE_CELL, (e) => {
       const { start } = this.selection.range;
@@ -1571,9 +1568,9 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
   }
 
   protected getMoveRightColByKeyDownInternal({
-    col,
-    row,
-  }: CellAddress): number {
+                                               col,
+                                               row,
+                                             }: CellAddress): number {
     const {
       end: { col: endCol },
     } = _getCellRange(this, col, row);
