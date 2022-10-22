@@ -1,8 +1,8 @@
-import type { CellContext, GridCanvasHelperAPI } from "../../ts-types";
-import type { DrawCellInfo, GridInternal } from "../../ts-types-internal";
+import type { CellContext, GridCanvasHelperAPI } from "@/ts-types";
+import type { DrawCellInfo, GridInternal } from "@/ts-types-internal";
 import { BaseColumn } from "./BaseColumn";
 import { CheckStyle } from "../style/CheckStyle";
-import { getCheckColumnStateId } from "../../internal/symbolManager";
+import { getCheckColumnStateId } from "@/internal/symbolManager";
 import { toBoolean } from "../utils";
 
 const CHECK_COLUMN_STATE_ID = getCheckColumnStateId();

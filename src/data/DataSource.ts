@@ -16,8 +16,8 @@ import {
   getOrApply,
   isPromise,
   obj,
-} from "../internal/utils";
-import { EventTarget } from "../core/EventTarget";
+} from "@/internal/utils";
+import { EventTarget } from "@/core/EventTarget";
 import type { PromiseCacheValue } from "./internal/types";
 
 /** @private */

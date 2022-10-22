@@ -3,7 +3,7 @@ import type {
   CellRange,
   MaybeCall,
   MaybePromise,
-} from "../ts-types";
+} from "@/ts-types";
 
 const isNode =
   typeof window === "undefined" || typeof window.window === "undefined";

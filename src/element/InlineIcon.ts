@@ -1,5 +1,5 @@
 import * as fonts from "../internal/fonts";
-import type { AnyFunction, ColorDef } from "../ts-types";
+import type { AnyFunction, ColorDef } from "@/ts-types";
 import { Inline } from "./Inline";
 import type { InlineDrawOption } from "./Inline";
 

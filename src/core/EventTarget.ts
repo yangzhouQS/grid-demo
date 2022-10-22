@@ -1,5 +1,5 @@
-import type { AnyListener, EventListenerId } from "../ts-types";
-import { each } from "../internal/utils";
+import type { AnyListener, EventListenerId } from "@/ts-types";
+import { each } from "@/internal/utils";
 import { get as getSymbol } from "../internal/symbolManager";
 
 //private symbol

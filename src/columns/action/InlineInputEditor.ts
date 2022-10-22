@@ -2,12 +2,12 @@ import type {
   CellAddress,
   InlineInputEditorOption,
   ListGridAPI,
-} from "../../ts-types";
-import type { GridInternal, InputEditorState } from "../../ts-types-internal";
+} from "@/ts-types";
+import type { GridInternal, InputEditorState } from "@/ts-types-internal";
 import { BaseInputEditor } from "./BaseInputEditor";
 import { InlineInputElement } from "./internal/InlineInputElement";
-import { getInlineInputEditorStateId } from "../../internal/symbolManager";
-import { obj } from "../../internal/utils";
+import { getInlineInputEditorStateId } from "@/internal/symbolManager";
+import { obj } from "@/internal/utils";
 const _ = getInlineInputEditorStateId();
 
 function getState<T>(grid: GridInternal<T>): InputEditorState {

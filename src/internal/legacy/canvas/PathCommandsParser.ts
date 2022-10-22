@@ -1,4 +1,4 @@
-import type { AnyFunction } from "../../../ts-types";
+import type { AnyFunction } from "@/ts-types";
 import type { CanvasOperations } from "./internal";
 import { PathCommands } from "./PathCommands";
 

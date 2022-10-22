@@ -5,8 +5,8 @@ import type {
   NamedIcon,
   PathIcon,
   SvgIcon,
-} from "../ts-types";
-import type { SimpleColumnIconOption } from "../ts-types-internal";
+} from "@/ts-types";
+import type { SimpleColumnIconOption } from "@/ts-types-internal";
 
 type ColumnIconArrayOption = {
   content?: (string | null)[];

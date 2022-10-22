@@ -5,11 +5,11 @@ import type {
   EventListenerId,
   LayoutObjectId,
   ListGridAPI,
-} from "../../ts-types";
+} from "@/ts-types";
 import { bindCellClickAction, bindCellKeyAction } from "./actionBind";
 import { BaseAction } from "./BaseAction";
-import type { GridInternal } from "../../ts-types-internal";
-import { extend } from "../../internal/utils";
+import type { GridInternal } from "@/ts-types-internal";
+import { extend } from "@/internal/utils";
 import { isDisabledRecord } from "./action-utils";
 import { noop } from "@/tools/canvashelper";
 

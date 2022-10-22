@@ -1,8 +1,8 @@
-import type { AnyFunction, MaybePromise } from "../ts-types";
+import type { AnyFunction, MaybePromise } from "@/ts-types";
 import { Inline } from "./Inline";
 import type { InlineDrawOption } from "./Inline";
-import { getCacheOrLoad } from "../internal/imgs";
-import { isPromise } from "../internal/utils";
+import { getCacheOrLoad } from "@/internal/imgs";
+import { isPromise } from "@/internal/utils";
 
 export type InlineImageConstructorOption = {
   src: MaybePromise<string>;

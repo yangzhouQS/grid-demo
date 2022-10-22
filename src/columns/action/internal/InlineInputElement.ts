@@ -1,7 +1,7 @@
-import { EventHandler } from "../../../internal/EventHandler";
-import type { ListGridAPI } from "../../../ts-types";
-import { createElement } from "../../../internal/dom";
-import { event } from "../../../internal/utils";
+import { EventHandler } from "@/internal/EventHandler";
+import type { ListGridAPI } from "@/ts-types";
+import { createElement } from "@/internal/dom";
+import { event } from "@/internal/utils";
 import { setInputValue } from "./input-value-handler";
 const KEY_TAB = 9;
 const KEY_ENTER = 13;

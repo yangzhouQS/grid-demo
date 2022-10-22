@@ -1,6 +1,6 @@
-import type { IconStyleOption } from "../../ts-types";
+import type { IconStyleOption } from "@/ts-types";
 import { Style } from "./Style";
-import { defaults } from "../../internal/utils";
+import { defaults } from "@/internal/utils";
 
 let defaultStyle: IconStyle;
 export class IconStyle extends Style {

@@ -2,7 +2,7 @@ import type {
   ColumnMenuItemOption,
   ListGridAPI,
   RectProps,
-} from "../../../ts-types";
+} from "@/ts-types";
 import {
   appendHtml,
   createElement,

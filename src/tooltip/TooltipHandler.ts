@@ -1,8 +1,8 @@
-import type { CellRange, ListGridAPI } from "../ts-types";
+import type { CellRange, ListGridAPI } from "@/ts-types";
 import type { BaseTooltip } from "./BaseTooltip";
-import { LG_EVENT_TYPE } from "../list-grid/LG_EVENT_TYPE";
+import { LG_EVENT_TYPE } from "@/list-grid/LG_EVENT_TYPE";
 import { Tooltip } from "./Tooltip";
-import { cellInRange } from "../internal/utils";
+import { cellInRange } from "@/internal/utils";
 
 const TOOLTIP_INSTANCE_FACTORY = {
   "overflow-text"<T>(grid: ListGridAPI<T>): BaseTooltip<T> {

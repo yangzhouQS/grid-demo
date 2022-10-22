@@ -1,7 +1,7 @@
-import type { FieldDef, MaybePromise, MaybePromiseOrUndef } from "../ts-types";
-import { each, isPromise } from "../internal/utils";
+import type { FieldDef, MaybePromise, MaybePromiseOrUndef } from "@/ts-types";
+import { each, isPromise } from "@/internal/utils";
 import { DataSource } from "./DataSource";
-import { EventHandler } from "../internal/EventHandler";
+import { EventHandler } from "@/internal/EventHandler";
 
 /** @private */
 type Filter<T> = (record: T | undefined) => boolean;

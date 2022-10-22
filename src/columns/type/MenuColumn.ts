@@ -6,11 +6,11 @@ import type {
   ListGridAPI,
   MenuColumnOption,
   SimpleColumnMenuItemOption,
-} from "../../ts-types";
+} from "@/ts-types";
 import { BaseColumn } from "./BaseColumn";
-import type { DrawCellInfo } from "../../ts-types-internal";
+import type { DrawCellInfo } from "@/ts-types-internal";
 import { MenuStyle } from "../style/MenuStyle";
-import { normalize } from "../../internal/menu-items";
+import { normalize } from "@/internal/menu-items";
 
 export class MenuColumn<T> extends BaseColumn<T> {
   private _options: SimpleColumnMenuItemOption[];

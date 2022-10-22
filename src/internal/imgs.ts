@@ -1,5 +1,5 @@
 import { LRUCache } from "./LRUCache";
-import type { MaybePromise } from "../ts-types";
+import type { MaybePromise } from "@/ts-types";
 import { then } from "./utils";
 
 const allCache: {

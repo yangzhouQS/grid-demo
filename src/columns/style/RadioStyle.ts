@@ -1,6 +1,6 @@
-import type { ColorDef, RadioStyleOption } from "../../ts-types";
+import type { ColorDef, RadioStyleOption } from "@/ts-types";
 import { StdBaseStyle } from "./StdBaseStyle";
-import { defaults } from "../../internal/utils";
+import { defaults } from "@/internal/utils";
 
 let defaultStyle: RadioStyle;
 export class RadioStyle extends StdBaseStyle {

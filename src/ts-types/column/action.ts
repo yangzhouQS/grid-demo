@@ -1,6 +1,6 @@
 import type { CellAddress } from "../grid";
 import type { ColumnMenuItemOptions } from "../define";
-import type { ListGridAPI } from "../grid-engine";
+import type { ListGridAPI } from "@/ts-types";
 import type { MaybePromise } from "../base";
 
 export type RecordBoolean<T = any> = boolean | ((record: T) => boolean);

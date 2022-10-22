@@ -1,4 +1,4 @@
-import type { ColorDef, MaybePromise } from "../ts-types/base";
+import type { ColorDef, MaybePromise } from "@/ts-types";
 export type SimpleColumnIconOption = {
   content?: string;
   font?: string;

@@ -1,4 +1,4 @@
-import type { PasteRangeBoxValues } from "../ts-types";
+import type { PasteRangeBoxValues } from "@/ts-types";
 
 export function normalizePasteValue(text: string): string {
   return text[text.length - 1] !== "\n"

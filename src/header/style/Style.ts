@@ -2,7 +2,7 @@ import type {
   ColorDef,
   HeaderStdStyleOption,
   TextOverflow,
-} from "../../ts-types";
+} from "@/ts-types";
 import { StdBaseStyle } from "./StdBaseStyle";
 let defaultStyle: Style;
 export class Style extends StdBaseStyle {

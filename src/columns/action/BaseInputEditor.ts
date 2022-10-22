@@ -4,10 +4,10 @@ import type {
   EventListenerId,
   LayoutObjectId,
   ListGridAPI,
-} from "../../ts-types";
-import { cellEquals, event } from "../../internal/utils";
+} from "@/ts-types";
+import { cellEquals, event } from "@/internal/utils";
 import { isDisabledRecord, isReadOnlyRecord } from "./action-utils";
-import { DG_EVENT_TYPE } from "../../core/DG_EVENT_TYPE";
+import { DG_EVENT_TYPE } from "@/core/DG_EVENT_TYPE";
 import { Editor } from "./Editor";
 const KEY_ENTER = 13;
 const KEY_F2 = 113;

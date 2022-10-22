@@ -6,7 +6,7 @@ import type {
   SortHeaderActionOption,
   SortOption,
   SortState,
-} from "../../ts-types";
+} from "@/ts-types";
 import { BaseAction } from "./BaseAction";
 import { bindCellClickAction } from "./actionBind";
 

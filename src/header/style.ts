@@ -3,7 +3,7 @@ import type {
   CheckHeaderStyleOption,
   HeaderStyleOption,
   SortHeaderStyleOption,
-} from "../ts-types";
+} from "@/ts-types";
 import { BaseStyle } from "./style/BaseStyle";
 import { CheckHeaderStyle } from "./style/CheckHeaderStyle";
 import { MultilineTextHeaderStyle } from "./style/MultilineTextHeaderStyle";

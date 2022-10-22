@@ -1,4 +1,4 @@
-import type { RectProps } from "../ts-types";
+import type { RectProps } from "@/ts-types";
 
 export type PaddingOption = {
   left?: number;

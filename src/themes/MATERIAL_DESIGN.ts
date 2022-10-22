@@ -1,6 +1,6 @@
 /*eslint no-bitwise:0*/
 
-import type { StylePropertyFunctionArg, ThemeDefine } from "../ts-types";
+import type { StylePropertyFunctionArg, ThemeDefine } from "@/ts-types";
 
 function FROZEN_ROWS_BORDER_COLOR(args: StylePropertyFunctionArg): string[] {
   const {

@@ -1,4 +1,4 @@
-import type { ColumnMenuItemOption, ColumnMenuItemOptions } from "../ts-types";
+import type { ColumnMenuItemOption, ColumnMenuItemOptions } from "@/ts-types";
 /** @private */
 function extend<T, U>(a: T, b: U): T & U {
   const o: any = {};

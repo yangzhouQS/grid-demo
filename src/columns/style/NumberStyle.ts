@@ -1,6 +1,6 @@
-import type { NumberStyleOption } from "../../ts-types";
+import type { NumberStyleOption } from "@/ts-types";
 import { Style } from "./Style";
-import { defaults } from "../../internal/utils";
+import { defaults } from "@/internal/utils";
 
 let defaultStyle: NumberStyle;
 export class NumberStyle extends Style {

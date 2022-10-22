@@ -6,10 +6,10 @@ import type {
   HeaderStyleOption,
   LayoutObjectId,
   ListGridAPI,
-} from "../../ts-types";
+} from "@/ts-types";
 import { BaseStyle } from "../style/BaseStyle";
-import type { DrawCellInfo } from "../../ts-types-internal";
-import type { GridCanvasHelper } from "../../GridCanvasHelper";
+import type { DrawCellInfo } from "@/ts-types-internal";
+import type { GridCanvasHelper } from "@/GridCanvasHelper";
 
 export abstract class BaseHeader<T> {
   constructor(_options = {}) {

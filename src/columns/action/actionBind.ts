@@ -3,9 +3,9 @@ import type {
   EventListenerId,
   LayoutObjectId,
   ListGridAPI,
-} from "../../ts-types";
-import { event, isPromise } from "../../internal/utils";
-import { DG_EVENT_TYPE } from "../../core/DG_EVENT_TYPE";
+} from "@/ts-types";
+import { event, isPromise } from "@/internal/utils";
+import { DG_EVENT_TYPE } from "@/core/DG_EVENT_TYPE";
 
 const KEY_ENTER = 13;
 const KEY_SPACE = 32;

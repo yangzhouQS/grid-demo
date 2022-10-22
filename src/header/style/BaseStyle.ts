@@ -1,5 +1,5 @@
-import type { BaseStyleOption, ColorDef, ColumnStyle } from "../../ts-types";
-import { EventTarget } from "../../core/EventTarget";
+import type { BaseStyleOption, ColorDef, ColumnStyle } from "@/ts-types";
+import { EventTarget } from "@/core/EventTarget";
 
 const EVENT_TYPE = {
   CHANGE_STYLE: "change_style",

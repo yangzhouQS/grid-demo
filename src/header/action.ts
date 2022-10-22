@@ -3,9 +3,9 @@ import type {
   HeaderActionOption,
   SortHeaderActionOption,
   SortOption,
-} from "../ts-types";
+} from "@/ts-types";
 import { BaseAction } from "./action/BaseAction";
-import type { BaseHeaderDefine } from "../list-grid/layout-map/api";
+import type { BaseHeaderDefine } from "@/list-grid/layout-map";
 import { CheckHeaderAction } from "./action/CheckHeaderAction";
 import { SortHeaderAction } from "./action/SortHeaderAction";
 

@@ -3,7 +3,7 @@ import type {
   EventListenerId,
   LayoutObjectId,
   ListGridAPI,
-} from "../../ts-types";
+} from "@/ts-types";
 
 export class BaseAction<T> {
   protected _disabled: boolean;

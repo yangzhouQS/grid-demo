@@ -1,4 +1,4 @@
-import type { AnyFunction } from "../ts-types";
+import type { AnyFunction } from "@/ts-types";
 import { EventHandler } from "./EventHandler";
 import { isNode } from "./utils";
 const handler = new EventHandler();

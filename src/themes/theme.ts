@@ -5,8 +5,8 @@ import type {
   RequiredThemeDefine,
   StylePropertyFunctionArg,
   ThemeDefine,
-} from "../ts-types";
-import { getChainSafe } from "../internal/utils";
+} from "@/ts-types";
+import { getChainSafe } from "@/internal/utils";
 import { get as getSymbol } from "../internal/symbolManager";
 //private symbol
 const _ = getSymbol();

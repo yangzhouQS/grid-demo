@@ -3,7 +3,7 @@ import type {
   FieldDef,
   MaybePromise,
   MaybePromiseOrUndef,
-} from "../ts-types";
+} from "@/ts-types";
 import { DataSource } from "./DataSource";
 import type { DataSourceParam } from "./DataSource";
 import type { PromiseCacheValue } from "./internal/types";

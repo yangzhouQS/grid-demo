@@ -2,13 +2,13 @@ import type {
   CellAddress,
   EventListenerId,
   LayoutObjectId,
-} from "../../ts-types";
-import type { CheckHeaderState, GridInternal } from "../../ts-types-internal";
+} from "@/ts-types";
+import type { CheckHeaderState, GridInternal } from "@/ts-types-internal";
 import { bindCellClickAction, bindCellKeyAction } from "./actionBind";
 import { BaseAction } from "./BaseAction";
-import { animate } from "../../internal/animate";
-import { getCheckHeaderStateId } from "../../internal/symbolManager";
-import { obj } from "../../internal/utils";
+import { animate } from "@/internal/animate";
+import { getCheckHeaderStateId } from "@/internal/symbolManager";
+import { obj } from "@/internal/utils";
 
 const CHECK_HEADER_STATE_ID = getCheckHeaderStateId();
 

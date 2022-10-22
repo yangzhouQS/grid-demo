@@ -4,9 +4,9 @@ import type {
   ColumnIconOption,
   GridCanvasHelperAPI,
   MaybePromise,
-} from "../../ts-types";
-import type { SimpleColumnIconOption } from "../../ts-types-internal";
-import { isPromise } from "../../internal/utils";
+} from "@/ts-types";
+import type { SimpleColumnIconOption } from "@/ts-types-internal";
+import { isPromise } from "@/internal/utils";
 
 export function loadIcons(
   icon: MaybePromise<

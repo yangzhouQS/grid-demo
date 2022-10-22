@@ -1,6 +1,6 @@
-import type { CheckHeaderStyleOption, ColorDef } from "../../ts-types";
+import type { CheckHeaderStyleOption, ColorDef } from "@/ts-types";
 import { Style } from "./Style";
-import { defaults } from "../../internal/utils";
+import { defaults } from "@/internal/utils";
 
 let defaultStyle: CheckHeaderStyle;
 export class CheckHeaderStyle extends Style {

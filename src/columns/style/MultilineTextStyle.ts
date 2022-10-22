@@ -1,6 +1,6 @@
-import type { LineClamp, MultilineTextStyleOption } from "../../ts-types";
+import type { LineClamp, MultilineTextStyleOption } from "@/ts-types";
 import { Style } from "./Style";
-import { defaults } from "../../internal/utils";
+import { defaults } from "@/internal/utils";
 
 let defaultStyle: MultilineTextStyle;
 export class MultilineTextStyle extends Style {
