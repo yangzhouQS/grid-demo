@@ -51,7 +51,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src')
+      '@': resolve(__dirname, 'src'),
     },
     // 情景导出 package.json 配置中的exports字段
     conditions: [],

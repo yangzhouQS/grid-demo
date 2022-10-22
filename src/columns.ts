@@ -7,4 +7,4 @@ import * as type from "./columns/type";
  * @namespace cheetahGrid.columns
  * @memberof cheetahGrid
  */
-export { action, type, style };
+export const columns = { action, type, style };

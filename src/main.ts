@@ -8,10 +8,10 @@ import * as register from "./register";
 import * as themes from "./themes";
 import * as tools from "./tools";
 import {
-  ColumnDefine,
-  GroupHeaderDefine,
-  HeaderDefine,
-  HeadersDefine,
+  // ColumnDefine,
+  // GroupHeaderDefine,
+  // HeaderDefine,
+  // HeadersDefine,
   ListGrid,
   // ListGridConstructorOptions,
 } from "./ListGrid";

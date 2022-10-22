@@ -13,10 +13,10 @@ import type {
   LayoutObjectId,
   ListGridAPI,
   Message,
-} from "../../ts-types";
-import type { BaseAction } from "../../columns/action";
-import type { BaseColumn } from "../../columns/type/BaseColumn";
-import type { BaseStyle as HeaderBaseStyle } from "../../header/style";
+} from "@/ts-types";
+import type { BaseAction } from "@/columns/action";
+import type { BaseColumn } from "@/columns/type/BaseColumn";
+import type { BaseStyle as HeaderBaseStyle } from "@/header/style";
 
 export type OldSortOption<T> =
   | boolean
@@ -36,7 +36,6 @@ export interface BaseHeaderDefine<T> {
   sort?: OldSortOption<T>;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface HeaderDefine<T> extends BaseHeaderDefine<T> {
 }
 
@@ -87,7 +86,6 @@ export interface ColumnData<T> extends WidthData {
 }
 
 // Simple header
-
 export interface GroupHeaderDefine<T> extends HeaderDefine<T> {
   columns: HeadersDefine<T>;
 }
@@ -95,7 +93,6 @@ export interface GroupHeaderDefine<T> extends HeaderDefine<T> {
 export type HeadersDefine<T> = (GroupHeaderDefine<T> | ColumnDefine<T>)[];
 
 // Advanced layout
-
 export interface HeaderCellDefine<T> extends HeaderDefine<T> {
   colSpan?: number;
   rowSpan?: number;
@@ -115,7 +112,7 @@ export type ArrayLayoutDefine<T> = CellDefine<T>[][];
 export type LayoutDefine<T> = HeaderBodyLayoutDefine<T> | ArrayLayoutDefine<T>;
 
 /** @internal */
-interface LayoutMapAPI<T> {
+export interface LayoutMapAPI<T> {
   readonly headerRowCount: number;
   readonly bodyRowCount: number;
   readonly colCount: number;
@@ -138,5 +135,3 @@ interface LayoutMapAPI<T> {
 
   getRecordStartRowByRecordIndex(index: number): number;
 }
-
-export type { LayoutMapAPI };
