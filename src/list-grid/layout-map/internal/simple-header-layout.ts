@@ -13,6 +13,7 @@ import type {
 import { EmptyDataCache } from "./utils";
 
 let seqId = 0;
+
 export class SimpleHeaderLayoutMap<T> implements LayoutMapAPI<T> {
   private _headerObjects: HeaderData<T>[];
   private _headerObjectMap: { [key in LayoutObjectId]: HeaderData<T> };
@@ -20,6 +21,7 @@ export class SimpleHeaderLayoutMap<T> implements LayoutMapAPI<T> {
   private _columns: ColumnData<T>[];
   readonly bodyRowCount: number = 1;
   private _emptyDataCache = new EmptyDataCache();
+
   constructor(header: HeadersDefine<T>) {
     this._columns = [];
     this._headerCellIds = [];
@@ -30,21 +32,27 @@ export class SimpleHeaderLayoutMap<T> implements LayoutMapAPI<T> {
       return o;
     }, {} as { [key in LayoutObjectId]: HeaderData<T> });
   }
+
   get columnWidths(): ColumnData<T>[] {
     return this._columns;
   }
+
   get headerRowCount(): number {
     return this._headerCellIds.length;
   }
+
   get colCount(): number {
     return this._columns.length;
   }
+
   get headerObjects(): HeaderData<T>[] {
     return this._headerObjects;
   }
+
   get columnObjects(): ColumnData<T>[] {
     return this._columns;
   }
+
   getCellId(col: number, row: number): LayoutObjectId {
     if (this.headerRowCount <= row) {
       return this._columns[col].id;
@@ -52,6 +60,7 @@ export class SimpleHeaderLayoutMap<T> implements LayoutMapAPI<T> {
     //in header
     return this._headerCellIds[row][col];
   }
+
   getHeader(col: number, row: number): HeaderData<T> {
     const id = this.getCellId(col, row);
     return (
@@ -59,9 +68,11 @@ export class SimpleHeaderLayoutMap<T> implements LayoutMapAPI<T> {
       this._emptyDataCache.getHeader(col, row)
     );
   }
+
   getBody(col: number, _row: number): ColumnData<T> {
     return this._columns[col] || this._emptyDataCache.getBody(col, 0);
   }
+
   getBodyLayoutRangeById(id: LayoutObjectId): CellRange {
     for (let col = 0; col < this.colCount; col++) {
       if (id === this._columns[col].id) {
@@ -73,6 +84,7 @@ export class SimpleHeaderLayoutMap<T> implements LayoutMapAPI<T> {
     }
     throw new Error(`can not found body layout @id=${id as number}`);
   }
+
   getCellRange(col: number, row: number): CellRange {
     const result: CellRange = { start: { col, row }, end: { col, row } };
     if (this.headerRowCount <= row) {
@@ -106,6 +118,7 @@ export class SimpleHeaderLayoutMap<T> implements LayoutMapAPI<T> {
     }
     return result;
   }
+
   getRecordIndexByRow(row: number): number {
     if (row < this.headerRowCount) {
       return -1;
@@ -113,9 +126,11 @@ export class SimpleHeaderLayoutMap<T> implements LayoutMapAPI<T> {
       return row - this.headerRowCount;
     }
   }
+
   getRecordStartRowByRecordIndex(index: number): number {
     return this.headerRowCount + index;
   }
+
   private _addHeaders(
     row: number,
     header: HeadersDefine<T>,
@@ -168,6 +183,7 @@ export class SimpleHeaderLayoutMap<T> implements LayoutMapAPI<T> {
     });
     return results;
   }
+
   private _newRow(row: number): number[] {
     const newRow: number[] = (this._headerCellIds[row] = []);
     if (!this._columns.length) {

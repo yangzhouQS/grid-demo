@@ -56,7 +56,7 @@ export class FontRuler {
     computeStyle(font).forEach((style: Styles1 | Styles2) => {
       for (const k in style) {
         const key = k as StyleKeys;
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
         e.style[key as any] = (style as any)[key];
       }
     });

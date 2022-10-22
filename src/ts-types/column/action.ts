@@ -3,7 +3,6 @@ import type { ColumnMenuItemOptions } from "../define";
 import type { ListGridAPI } from "../grid-engine";
 import type { MaybePromise } from "../base";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type RecordBoolean<T = any> = boolean | ((record: T) => boolean);
 
 export interface BaseActionOption {
@@ -11,10 +10,8 @@ export interface BaseActionOption {
 }
 
 export type ActionListener = (
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   record: any,
   cell: CellAddress & {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     grid: ListGridAPI<any>;
   }
 ) => void;

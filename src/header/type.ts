@@ -7,13 +7,12 @@ import { MultilineTextHeader } from "./type/MultilineTextHeader";
 import { SortHeader } from "./type/SortHeader";
 
 const TYPES = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   DEFAULT: new Header<any>(),
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   SORT: new SortHeader<any>(),
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   CHECK: new CheckHeader<any>(),
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   MULTILINETEXT: new MultilineTextHeader<any>(),
 };
 export { BaseHeader, Header, SortHeader, CheckHeader, MultilineTextHeader };

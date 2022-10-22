@@ -80,7 +80,7 @@ export class Theme implements RequiredThemeDefine {
       const { obj, superTheme } = this[_];
       return getProp(obj, superTheme, ["highlightBgColor"]);
     }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     return (args: StylePropertyFunctionArg): any => {
       const color =
         args.row < args.grid.frozenRowCount
@@ -256,7 +256,6 @@ function hasThemeProperty(obj: PartialThemeDefine, names: string[]): boolean {
   if (obj instanceof Theme) {
     return obj.hasProperty(names);
   } else {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let o: any = obj;
     if (!o) {
       return false;

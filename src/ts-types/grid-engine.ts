@@ -135,7 +135,7 @@ export interface DataSourceAPI<T> {
   setField<F extends FieldDef<T>>(
     index: number,
     field: F,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     value: any
   ): MaybePromise<boolean>;
   sort(field: FieldDef<T>, order: "desc" | "asc"): MaybePromise<void>;
@@ -147,7 +147,7 @@ export interface SortState {
   row: number;
   order: "asc" | "desc" | undefined;
 }
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 export type HeaderValues = Map<any, any>;
 export interface ListGridAPI<T> extends DrawGridAPI {
   records: T[] | null;
@@ -169,11 +169,11 @@ export interface ListGridAPI<T> extends DrawGridAPI {
   getRowRecord(row: number): MaybePromiseOrUndef<T>;
   getRecordIndexByRow(row: number): number;
   getRecordStartRowByRecordIndex(index: number): number;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   getHeaderField(col: number, row: number): any | undefined;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   getHeaderValue(col: number, row: number): any | undefined;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   setHeaderValue(col: number, row: number, newValue: any): void;
   getCellRange(col: number, row: number): CellRange;
   getCellRangeByField(field: FieldDef<T>, index: number): CellRange | null;
@@ -183,13 +183,13 @@ export interface ListGridAPI<T> extends DrawGridAPI {
   doChangeValue(
     col: number,
     row: number,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     changeValueCallback: (before: any) => any
   ): MaybePromise<boolean>;
   doGetCellValue(
     col: number,
     row: number,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     valueCallback: (value: any) => void
   ): boolean;
   doSetPasteValue(text: string): void;
@@ -214,7 +214,7 @@ export type SetPasteValueTestData<T> = CellAddress & {
   grid: ListGridAPI<T>;
   record: T;
   value: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   oldValue: any;
 };
 
@@ -224,7 +224,7 @@ export interface InlineAPI {
   color(): ColorDef | null;
   canDraw(): boolean;
   onReady(callback: AnyFunction): void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   draw(opt: any): void;
   canBreak(): boolean;
 }

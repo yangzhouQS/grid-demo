@@ -119,14 +119,13 @@ export function each<T, K extends keyof T>(
   obj: T,
   fn: ObjectElementFunction<T, K>
 ): void;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 export function each(obj: any, fn: any): void {
   for (const key in obj) {
     fn(obj[key], key, obj);
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function isObject(obj: any): obj is Record<string, any> {
   return obj === Object(obj);
 }
@@ -344,7 +343,7 @@ function getKeyCode(e: KeyboardEvent): number {
 function isTouchEvent(e: TouchEvent | MouseEvent): e is TouchEvent {
   return !!(e as TouchEvent).changedTouches;
 }
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 function getIgnoreCase(obj: any, name: string): any {
   if (obj[name]) {
     return obj[name];

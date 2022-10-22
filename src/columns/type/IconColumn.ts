@@ -56,7 +56,6 @@ export class IconColumn<T> extends Column<T> {
     if (!isNaN(num)) {
       const icon: IconColumnOption & { width?: number } = {};
       icons.iconPropKeys.forEach((k) => {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (icon as any)[k] = (style as any)[k];
       });
       icon.className = this._className;

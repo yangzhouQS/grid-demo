@@ -29,19 +29,32 @@ import type {
   SortState,
   ThemeDefine,
 } from "./ts-types";
-import {
+/*import {
   ColumnDefine,
   GroupHeaderDefine,
   HeaderDefine,
   HeadersDefine,
   MultiLayoutMap,
   SimpleHeaderLayoutMap,
+} from "./list-grid/layout-map/index";*/
+
+import { MultiLayoutMap, SimpleHeaderLayoutMap } from "./list-grid/layout-map";
+
+import type {
+  LayoutDefine,
+  LayoutMapAPI,
+  ColumnData,
+  ColumnDefine,
+  HeaderDefine,
+  HeadersDefine,
+  GroupHeaderDefine,
 } from "./list-grid/layout-map";
+
 import type {
   DrawGridConstructorOptions,
   DrawGridProtected,
 } from "./core/DrawGrid";
-import type { LayoutDefine, LayoutMapAPI } from "./list-grid/layout-map";
+// import type { LayoutDefine, LayoutMapAPI } from "./list-grid/layout-map";
 import { MessageHandler, hasMessage } from "./columns/message/MessageHandler";
 import {
   cellEquals,
@@ -53,7 +66,7 @@ import {
 } from "./internal/utils";
 import type { BaseColumn } from "./columns/type/BaseColumn";
 import { BaseStyle } from "./columns/style";
-import type { ColumnData } from "./list-grid/layout-map/api";
+// import type { ColumnData } from "./list-grid/layout-map/api";
 import type { DrawCellInfo } from "./ts-types-internal";
 import { DrawGrid } from "./core/DrawGrid";
 import { GridCanvasHelper } from "./GridCanvasHelper";
@@ -78,6 +91,7 @@ function _getCellRange<T>(
 ): CellRange {
   return grid[_].layoutMap.getCellRange(col, row);
 }
+
 /** @private */
 function _updateRect<T>(
   grid: ListGrid<T>,
@@ -106,6 +120,7 @@ function _updateRect<T>(
     return Rect.bounds(left, top, right, bottom);
   });
 }
+
 /** @private */
 function _getCellValue<T>(
   grid: ListGrid<T>,
@@ -120,12 +135,12 @@ function _getCellValue<T>(
     return _getField(grid, field, row);
   }
 }
+
 /** @private */
 function _setCellValue<T>(
   grid: ListGrid<T>,
   col: number,
   row: number,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value: any
 ): MaybePromise<boolean> {
   if (row < grid[_].layoutMap.headerRowCount) {
@@ -140,6 +155,7 @@ function _setCellValue<T>(
     return grid[_].dataSource.setField(index, field, value);
   }
 }
+
 /** @private */
 function _getCellMessage<T>(
   grid: ListGrid<T>,
@@ -179,6 +195,7 @@ function _getCellMessage<T>(
     });
   }
 }
+
 /** @private */
 function _getCellIcon0<T>(
   grid: ListGrid<T>,
@@ -201,9 +218,9 @@ function _getCellIcon0<T>(
   if (!obj.isObject(icon) || typeof icon === "function") {
     return _getField(grid, icon, row);
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   const retIcon: any = {};
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   const iconOpt: any = icon;
   icons.iconPropKeys.forEach((k) => {
     if (iconOpt[k]) {
@@ -219,6 +236,7 @@ function _getCellIcon0<T>(
   });
   return retIcon;
 }
+
 /** @private */
 function _getCellIcon<T>(
   grid: ListGrid<T>,
@@ -239,6 +257,7 @@ function _getCellIcon<T>(
     return _getCellIcon0(grid, icon, row);
   }
 }
+
 /** @private */
 function _getField<T>(
   grid: ListGrid<T>,
@@ -255,6 +274,7 @@ function _getField<T>(
     return grid[_].dataSource.getField(index, field);
   }
 }
+
 /** @private */
 function _hasField<T>(
   grid: ListGrid<T>,
@@ -271,6 +291,7 @@ function _hasField<T>(
     return grid[_].dataSource.hasField(index, field);
   }
 }
+
 /** @private */
 function _onDrawValue<T>(
   grid: ListGrid<T>,
@@ -337,6 +358,7 @@ function _onDrawValue<T>(
 
   return draw(cellValue, info, context, grid);
 }
+
 /** @private */
 function _borderWithState<T>(
   grid: ListGrid<T>,
@@ -352,6 +374,7 @@ function _borderWithState<T>(
 
   const selRecordIndex = layoutMap.getRecordIndexByRow(sel.row);
   const selId = layoutMap.getCellId(sel.col, sel.row);
+
   function isSelectCell(col: number, row: number): boolean {
     if (col === sel.col && row === sel.row) {
       return true;
@@ -421,6 +444,7 @@ function _borderWithState<T>(
     }
   }
 }
+
 /** @private */
 function _refreshHeader<T>(grid: ListGrid<T>): void {
   const protectedSpace = grid[_];
@@ -523,6 +547,7 @@ function _refreshRowCount<T>(grid: ListGrid<T>): void {
     grid[_].dataSource.length * layoutMap.bodyRowCount +
     layoutMap.headerRowCount;
 }
+
 /** @private */
 function _tryWithUpdateDataSource<T>(
   grid: ListGrid<T>,
@@ -554,6 +579,7 @@ function _tryWithUpdateDataSource<T>(
     ),
   ];
 }
+
 /** @private */
 function _setRecords<T>(grid: ListGrid<T>, records: T[] = []): void {
   _tryWithUpdateDataSource(grid, () => {
@@ -563,6 +589,7 @@ function _setRecords<T>(grid: ListGrid<T>, records: T[] = []): void {
     grid.addDisposable(newDataSource);
   });
 }
+
 /** @private */
 function _setDataSource<T>(grid: ListGrid<T>, dataSource: DataSource<T>): void {
   _tryWithUpdateDataSource(grid, () => {
@@ -835,6 +862,7 @@ interface ListGridProtected<T> extends DrawGridProtected {
   records?: T[] | null;
   allowRangePaste: boolean;
 }
+
 export { ListGridProtected };
 
 export interface ListGridConstructorOptions<T>
@@ -883,7 +911,9 @@ export interface ListGridConstructorOptions<T>
    */
   frozenRowCount?: undefined;
 }
+
 export { HeadersDefine, ColumnDefine, HeaderDefine, GroupHeaderDefine };
+
 /**
  * ListGrid
  * @classdesc cheetahGrid.ListGrid
@@ -893,9 +923,11 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
   protected [_]: ListGridProtected<T>;
   public disabled = false;
   public readOnly = false;
+
   static get EVENT_TYPE(): typeof LG_EVENT_TYPE {
     return LG_EVENT_TYPE;
   }
+
   /**
    * constructor
    *
@@ -934,6 +966,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
       this.invalidate();
     });
   }
+
   /**
    * Dispose the grid instance.
    * @returns {void}
@@ -944,12 +977,14 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     protectedSpace.tooltipHandler.dispose();
     super.dispose();
   }
+
   /**
    * Gets the define of the header.
    */
   get header(): HeadersDefine<T> {
     return this[_].header;
   }
+
   /**
    * Sets the define of the header with the given data.
    * <pre>
@@ -984,12 +1019,14 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     this[_].header = header;
     _refreshHeader(this);
   }
+
   /**
    * Gets the define of the layout.
    */
   get layout(): LayoutDefine<T> {
     return this[_].layout;
   }
+
   /**
    * Sets the define of the layout with the given data.
    */
@@ -997,18 +1034,21 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     this[_].layout = layout;
     _refreshHeader(this);
   }
+
   /**
    * Get the row count per record
    */
   get recordRowCount(): number {
     return this[_].layoutMap.bodyRowCount;
   }
+
   /**
    * Get the records.
    */
   get records(): T[] | null {
     return this[_].records || null;
   }
+
   /**
    * Set the records from given
    */
@@ -1020,12 +1060,14 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     _refreshRowCount(this);
     this.invalidate();
   }
+
   /**
    * Get the data source.
    */
   get dataSource(): DataSource<T> {
     return this[_].dataSource;
   }
+
   /**
    * Set the data source from given
    */
@@ -1034,12 +1076,14 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     _refreshRowCount(this);
     this.invalidate();
   }
+
   /**
    * Get the theme.
    */
   get theme(): Theme | null {
     return this[_].theme;
   }
+
   /**
    * Set the theme from given
    */
@@ -1047,15 +1091,18 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     this[_].theme = themes.of(theme);
     this.invalidate();
   }
+
   /**
    * If set to true to allow pasting of ranges.
    */
   get allowRangePaste(): boolean {
     return this[_].allowRangePaste;
   }
+
   set allowRangePaste(allowRangePaste: boolean) {
     this[_].allowRangePaste = allowRangePaste;
   }
+
   /**
    * Get the font definition as a string.
    * @override
@@ -1063,6 +1110,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
   get font(): string {
     return super.font || this[_].gridCanvasHelper.theme.font;
   }
+
   /**
    * Set the font definition with the given string.
    * @override
@@ -1070,6 +1118,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
   set font(font: string) {
     super.font = font;
   }
+
   /**
    * Get the background color of the underlay.
    * @override
@@ -1080,6 +1129,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
       this[_].gridCanvasHelper.theme.underlayBackgroundColor
     );
   }
+
   /**
    * Set the background color of the underlay.
    * @override
@@ -1087,12 +1137,14 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
   set underlayBackgroundColor(underlayBackgroundColor: string) {
     super.underlayBackgroundColor = underlayBackgroundColor;
   }
+
   /**
    * Get the sort state.
    */
   get sortState(): SortState {
     return this[_].sortState;
   }
+
   /**
    * Sets the sort state.
    * If `null` to set, the sort state is initialized.
@@ -1126,18 +1178,21 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
       this.setHeaderValue(newState.col, newState.row, newState.order);
     }
   }
+
   /**
    * Get the header values.
    */
   get headerValues(): HeaderValues {
     return this[_].headerValues || (this[_].headerValues = new Map());
   }
+
   /**
    * Sets the header values.
    */
   set headerValues(headerValues: HeaderValues) {
     this[_].headerValues = headerValues || new Map();
   }
+
   /**
    * Get the field of the given column index.
    * @param  {number} col The column index.
@@ -1150,6 +1205,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
       row ?? this[_].layoutMap.headerRowCount
     ).field;
   }
+
   /**
    * Get the column define of the given column index.
    * @param  {number} col The column index.
@@ -1162,20 +1218,23 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
       row ?? this[_].layoutMap.headerRowCount
     ).define;
   }
+
   getColumnType(col: number, row: number): ColumnTypeAPI {
     return this[_].layoutMap.getBody(col, row).columnType;
   }
+
   /**
    * Get the header field of the given header cell.
    * @param  {number} col The column index.
    * @param  {number} row The header row index.
    * @return {*} The field object.
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   getHeaderField(col: number, row: number): any | undefined {
     const hd = this[_].layoutMap.getHeader(col, row);
     return hd.field;
   }
+
   /**
    * Get the header define of the given header cell.
    * @param  {number} col The column index.
@@ -1186,6 +1245,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     const hd = this[_].layoutMap.getHeader(col, row);
     return hd.define;
   }
+
   /**
    * Get the record of the given row index.
    * @param  {number} row The row index.
@@ -1193,12 +1253,12 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
    */
   getRowRecord(row: number): MaybePromiseOrUndef<T> {
     if (row < this[_].layoutMap.headerRowCount) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       return undefined;
     } else {
       return this[_].dataSource.get(_getRecordIndexByRow(this, row));
     }
   }
+
   /**
    * Get the record index of the given row index.
    * @param  {number} row The row index.
@@ -1206,6 +1266,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
   getRecordIndexByRow(row: number): number {
     return _getRecordIndexByRow(this, row);
   }
+
   /**
    * Gets the row index starting at the given record index.
    * @param  {number} index The record index.
@@ -1213,6 +1274,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
   getRecordStartRowByRecordIndex(index: number): number {
     return this[_].layoutMap.getRecordStartRowByRecordIndex(index);
   }
+
   /**
    * Get the column index of the given field.
    * @param  {*} field The field.
@@ -1223,6 +1285,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     const range = this.getCellRangeByField(field, 0);
     return range?.start.col ?? null;
   }
+
   /**
    * Get the column index of the given field.
    * @param  {*} field The field.
@@ -1248,6 +1311,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     }
     return null;
   }
+
   /**
    * Focus the cell.
    * @param  {*} field The field.
@@ -1269,6 +1333,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     this.invalidateGridRect(startCol, startRow, endCol, endRow);
     this.invalidateCell(newFocus.col, newFocus.row);
   }
+
   /**
    * Scroll to where cell is visible.
    * @param  {*} field The field.
@@ -1282,9 +1347,11 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
       cell?.row ?? this[_].layoutMap.headerRowCount
     );
   }
+
   getGridCanvasHelper(): GridCanvasHelper<T> {
     return this[_].gridCanvasHelper;
   }
+
   /**
    * Get cell range information for a given cell.
    * @param {number} col column index of the cell
@@ -1294,6 +1361,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
   getCellRange(col: number, row: number): CellRange {
     return _getCellRange(this, col, row);
   }
+
   /**
    * Get header range information for a given cell.
    * @param {number} col column index of the cell
@@ -1304,6 +1372,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
   getHeaderCellRange(col: number, row: number): CellRange {
     return this.getCellRange(col, row);
   }
+
   protected getCopyCellValue(
     col: number,
     row: number,
@@ -1330,6 +1399,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     const columnData = this[_].layoutMap.getBody(col, row);
     return columnData.columnType.getCopyCellValue(value, this, { col, row });
   }
+
   protected onDrawCell(
     col: number,
     row: number,
@@ -1357,10 +1427,10 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     }
     return _onDrawValue(this, cellValue, context, { col, row }, style, draw);
   }
+
   doGetCellValue(
     col: number,
     row: number,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     valueCallback: (value: any) => void
   ): boolean {
     if (row < this[_].layoutMap.headerRowCount) {
@@ -1376,10 +1446,10 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     }
     return true;
   }
+
   doChangeValue(
     col: number,
     row: number,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     changeValueCallback: (before: any) => any
   ): MaybePromise<boolean> {
     if (row < this[_].layoutMap.headerRowCount) {
@@ -1416,6 +1486,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
       });
     }
   }
+
   doSetPasteValue(
     text: string,
     test?: (data: SetPasteValueTestData<T>) => boolean
@@ -1426,12 +1497,12 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
       void
     >(this, text, test as (data: SetPasteValueTestData<T>) => boolean);
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   getHeaderValue(col: number, row: number): any | undefined {
     const field = this.getHeaderField(col, row);
     return this.headerValues.get(field);
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   setHeaderValue(col: number, row: number, newValue: any): void {
     const field = this.getHeaderField(col, row);
 
@@ -1446,9 +1517,11 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
       oldValue,
     });
   }
+
   getLayoutCellId(col: number, row: number): LayoutObjectId {
     return this[_].layoutMap.getCellId(col, row);
   }
+
   protected bindEventsInternal(): void {
     const grid: DrawGridAPI = this as DrawGridAPI;
     grid.listen(LG_EVENT_TYPE.SELECTED_CELL, (e: SelectedCellEvent) => {
@@ -1488,6 +1561,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
       _onRangeDelete.call<ListGrid<T>, [], void>(this);
     });
   }
+
   protected getMoveLeftColByKeyDownInternal({ col, row }: CellAddress): number {
     const {
       start: { col: startCol },
@@ -1495,6 +1569,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     col = startCol;
     return super.getMoveLeftColByKeyDownInternal({ col, row });
   }
+
   protected getMoveRightColByKeyDownInternal({
     col,
     row,
@@ -1505,6 +1580,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     col = endCol;
     return super.getMoveRightColByKeyDownInternal({ col, row });
   }
+
   protected getMoveUpRowByKeyDownInternal({ col, row }: CellAddress): number {
     const {
       start: { row: startRow },
@@ -1512,6 +1588,7 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     row = startRow;
     return super.getMoveUpRowByKeyDownInternal({ col, row });
   }
+
   protected getMoveDownRowByKeyDownInternal({ col, row }: CellAddress): number {
     const {
       end: { row: endRow },
@@ -1519,19 +1596,21 @@ export class ListGrid<T> extends DrawGrid implements ListGridAPI<T> {
     row = endRow;
     return super.getMoveDownRowByKeyDownInternal({ col, row });
   }
+
   protected getOffsetInvalidateCells(): number {
     return 1;
   }
+
   protected getCopyRangeInternal(range: CellRange): CellRange {
     const { start } = this.getCellRange(range.start.col, range.start.row);
     const { end } = this.getCellRange(range.end.col, range.end.row);
     return { start, end };
   }
+
   fireListeners<TYPE extends keyof ListGridEventHandlersEventMap<T>>(
     type: TYPE,
     ...event: ListGridEventHandlersEventMap<T>[TYPE]
   ): ListGridEventHandlersReturnMap[TYPE][] {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return super.fireListeners(type as any, ...event);
   }
 }

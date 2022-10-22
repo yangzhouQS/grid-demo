@@ -21,9 +21,8 @@ class ImmutableCheckHeaderAction<T> extends CheckHeaderAction<T> {
 }
 
 export const ACTIONS = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   SORT: new ImmutableSortHeaderAction<any>(),
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   CHECK: new ImmutableCheckHeaderAction<any>(),
 };
 /**

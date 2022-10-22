@@ -160,4 +160,4 @@ function hasWebKitFallbackBug(): boolean {
   return HAS_WEBKIT_FALLBACK_BUG;
 }
 
-export = FontWatchRunner;
+export default FontWatchRunner;

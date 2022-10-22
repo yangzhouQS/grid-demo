@@ -235,7 +235,6 @@ export class MultiLayoutMap<T> implements LayoutMapAPI<T> {
     return this.headerRowCount + index * this.bodyRowCount;
   }
   private _getCellRange(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     layout: LayoutObjectGrid<HeaderData<T> | ColumnData<T>, any>,
     col: number,
     layoutRow: number,

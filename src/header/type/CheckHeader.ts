@@ -15,7 +15,6 @@ import { obj } from "../../internal/utils";
 
 const CHECK_HEADER_STATE_ID = getCheckHeaderStateId();
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function getState<T>(grid: GridInternal<T>): CheckHeaderState {
   let state = grid[CHECK_HEADER_STATE_ID];
   if (!state) {
@@ -36,7 +35,7 @@ export class CheckHeader<T> extends BaseHeader<T> {
     context: CellContext,
     style: CheckHeaderStyle,
     helper: GridCanvasHelper<T>,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     grid: GridInternal<T>,
     { drawCellBase, getIcon }: DrawCellInfo<T>
   ): void {

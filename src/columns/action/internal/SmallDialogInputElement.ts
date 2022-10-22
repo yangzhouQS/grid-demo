@@ -26,9 +26,8 @@ function _focus(input: HTMLInputElement, handler: EventHandler): void {
     } catch (e) {
       //ignore
     }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     if ((document as any).selection) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const range = (input as any).createTextRange();
       range.collapse();
       range.moveEnd("character", end);

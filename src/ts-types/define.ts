@@ -54,20 +54,17 @@ export type ColumnMenuItemOptions =
   | string
   | ColumnMenuItemObjectOptions;
 export interface ColumnMenuItemOption {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value: any;
   label: string;
   classList?: string[];
   html?: string;
 }
 export interface SimpleColumnMenuItemOption {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value: any;
   label: string;
 }
 /** @internal */
 export interface OldSimpleColumnMenuItemOption {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value: any;
   caption: string;
 }
@@ -83,7 +80,7 @@ export type LineClamp = number | "auto";
 export interface StylePropertyFunctionArg {
   row: number;
   col: number;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   grid: ListGridAPI<any>;
   context: CanvasRenderingContext2D;
 }

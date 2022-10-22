@@ -29,7 +29,6 @@ export function empty(dom: HTMLElement): void {
   }
 }
 function isNode(arg: HTMLElement | string): arg is HTMLElement {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return !!((arg as any).nodeType && (arg as any).nodeName);
 }
 function toNode(arg: HTMLElement | string): HTMLElement | HTMLElement[] {

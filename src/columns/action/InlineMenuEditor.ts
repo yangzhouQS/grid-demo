@@ -35,7 +35,7 @@ function getState<T>(grid: GridInternal<T>): InputEditorState {
   }
   return state;
 }
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 let globalElement: InlineMenuElement<any> | null = null;
 let bindGridCount = 0;
 function attachMenu<T>(
@@ -341,7 +341,6 @@ function _textToOptionValue(
   return undefined;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function normalizePasteValueStr(value: any): string {
   if (value == null) {
     return "";
@@ -349,12 +348,11 @@ function normalizePasteValueStr(value: any): string {
   return `${value}`.trim();
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function hasOptions(columnType: ColumnTypeAPI): columnType is MenuColumn<any> {
   if (columnType instanceof MenuColumn) {
     return true;
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   if (Array.isArray((columnType as any).options)) {
     return true;
   }

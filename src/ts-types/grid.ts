@@ -9,9 +9,8 @@ export interface CellRange {
   end: CellAddress;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type FieldGetter<T> = (record: T) => any;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 export type FieldSetter<T> = (record: T, value: any) => void;
 export interface FieldAssessor<T> {
   get: FieldGetter<T>;
@@ -19,5 +18,5 @@ export interface FieldAssessor<T> {
 }
 
 export type FieldDef<T> = keyof T | FieldGetter<T> | FieldAssessor<T>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 export type FieldData = MaybePromiseOrUndef<any>;

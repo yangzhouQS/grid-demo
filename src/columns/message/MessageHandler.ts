@@ -55,7 +55,7 @@ function normalizeMessage(message: Message): MessageObject {
   }
   return {
     type: "error",
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+
     message: `${message}`,
     original: message,
   };

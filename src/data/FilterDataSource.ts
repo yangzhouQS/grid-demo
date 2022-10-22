@@ -206,7 +206,7 @@ export class FilterDataSource<T> extends DataSource<T> {
   sort(field: FieldDef<T>, order: "desc" | "asc"): MaybePromise<void> {
     return this._dataSource.sort(field, order);
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   get source(): any {
     return this._dataSource.source;
   }

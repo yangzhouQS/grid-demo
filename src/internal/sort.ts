@@ -22,7 +22,6 @@ function createArrayPromise<R, F>(
   get: (i: number) => MaybePromise<R>,
   getField: ((r: R) => MaybePromise<F>) | undefined,
   length: number
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): Promise<any[]> {
   return new Promise((resolve) => {
     const plist = [];
@@ -46,10 +45,8 @@ function createArrayPromise<R, F>(
     Promise.all(plist)
       .then(() =>
         getField == null
-          ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (array as any)
-          : // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            setArrayField(array as any, getField)
+          ? (array as any)
+          : setArrayField(array as any, getField)
       )
       .then(resolve);
   });
@@ -134,9 +131,9 @@ export function sortPromise<R, F>(
   get: (i: number) => MaybePromise<R>,
   set: (i: number, r: R) => void,
   length: number,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   compare: any,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   getField?: any
 ): Promise<void> {
   if (typeof Promise !== "undefined") {
@@ -162,7 +159,6 @@ export function sortPromise<R, F>(
       catch(): Promise<undefined> {
         return dummyPromise;
       },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any;
     return dummyPromise;
   }

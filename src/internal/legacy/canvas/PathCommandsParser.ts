@@ -121,13 +121,13 @@ export class PathCommandsParser implements CanvasOperations {
   public readonly ellipse: typeof CanvasRenderingContext2D.prototype.ellipse;
   public readonly rect: typeof CanvasRenderingContext2D.prototype.rect;
   private readonly _commands: PathCommands;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   private _ops: { op: CanvasOperation; args: any[] }[] = [];
+
   constructor() {
     this._commands = new PathCommands(this as CanvasOperations);
     const buildPush =
       (op: CanvasOperation) =>
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (...args: any[]): void => {
         this._ops.push({
           op,
@@ -149,18 +149,17 @@ export class PathCommandsParser implements CanvasOperations {
     this.ellipse = buildPush("ellipse");
     this.rect = buildPush("rect");
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   command(name: PathCommandName, ...args: any[]): void {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const numArgs: any[] = args || [];
     for (let i = 0; i < args.length; i++) {
       numArgs[i] -= 0;
     }
     const command: AnyFunction = this._commands[name];
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     command.apply(this, numArgs);
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   parse(d: string): { op: CanvasOperation; args: any[] }[] {
     const ops = (this._ops = []);
     const tokens = pathTokens(d);

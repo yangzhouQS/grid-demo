@@ -1,7 +1,7 @@
-import type { AnyFunction, ColorDef, InlineAPI, RectProps } from "../ts-types";
-import type { Canvashelper } from "../tools/canvashelper";
-import type { GenWordsResult } from "../internal/utils";
-import { str } from "../internal/utils";
+import type { AnyFunction, ColorDef, InlineAPI, RectProps } from "@/ts-types";
+import type { Canvashelper } from "@/tools/canvashelper";
+import type { GenWordsResult } from "@/internal/utils";
+import { str } from "@/internal/utils";
 
 function getWidth(ctx: CanvasRenderingContext2D, content: string): number {
   return ctx.measureText(content).width;

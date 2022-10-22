@@ -19,7 +19,7 @@ function getState<T>(grid: GridInternal<T>): InputEditorState {
   }
   return state;
 }
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 let globalElement: SmallDialogInputElement<any> | null = null;
 let bindGridCount = 0;
 function attachInput<T>(

@@ -63,7 +63,7 @@ export function transform(canvas: HTMLCanvasElement): HTMLCanvasElement {
     enumerable: true,
   });
   const { drawImage } = ctx;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   ctx.drawImage = function (img: CanvasImageSource, ...args: any[]): void {
     if (img !== canvas || ratio === 1) {
       return (drawImage as AnyFunction).call(this, img, ...args);

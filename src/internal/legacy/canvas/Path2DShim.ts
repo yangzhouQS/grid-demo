@@ -6,7 +6,6 @@ const parser = new PathCommandsParser();
 type CanvasOperation = keyof CanvasOperations;
 
 export class Path2DShim implements CanvasPath {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   _ops: { op: CanvasOperation; args: any[] }[];
   arc(...args: Parameters<typeof Path2D.prototype.arc>): void {
     this._ops.push({ op: "arc", args });
@@ -62,7 +61,6 @@ const { CanvasRenderingContext2D } = window;
 
 const originalFill: AnyFunction = CanvasRenderingContext2D.prototype.fill;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 (CanvasRenderingContext2D.prototype as any).fill = function (
   ...args: Parameters<typeof CanvasRenderingContext2D.prototype.fill>
 ): void {

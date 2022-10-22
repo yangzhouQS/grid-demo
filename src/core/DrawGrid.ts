@@ -1617,7 +1617,6 @@ function _bindEvents(this: DrawGrid): void {
         ) {
           strCellValue = "";
         } else {
-          // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           strCellValue = `${copyCellValue}`;
           if (/^\[object .*\]$/.exec(strCellValue)) {
             // Ignore maybe object
@@ -2227,7 +2226,7 @@ class FocusControl extends EventTarget {
       let pasteText: string | undefined = undefined;
       if (browser.IE) {
         // IE
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
         pasteText = (window as any).clipboardData.getData("Text");
       } else {
         const { clipboardData } = e;
@@ -2260,7 +2259,6 @@ class FocusControl extends EventTarget {
       if (data != null) {
         cancelEvent(e);
         if (browser.IE) {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (window as any).clipboardData.setData("Text", data); // IE
         } else {
           e.clipboardData.setData("text/plain", data); // Chrome, Firefox
@@ -2899,7 +2897,6 @@ interface DrawGridProtected {
 
   config:
     | {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         [name: string]: any;
       }
     | undefined;
@@ -3194,7 +3191,7 @@ export abstract class DrawGrid extends EventTarget implements DrawGridAPI {
     this[_].keyboardOptions = keyboardOptions ?? undefined;
   }
   configure(name: "fadeinWhenCallbackInPromise", value?: boolean): boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   configure(name: string, value?: any): any {
     const cfg = this[_].config || (this[_].config = {});
     if (value != null) {

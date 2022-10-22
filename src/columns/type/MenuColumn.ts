@@ -94,7 +94,6 @@ export class MenuColumn<T> extends BaseColumn<T> {
           padding: iconPadding,
         });
       } else if (appearance !== "none") {
-        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         console.warn(`unsupported appearance:${appearance}`);
       }
     });

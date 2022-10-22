@@ -41,7 +41,7 @@ export abstract class BaseHeader<T> {
     if (typeof value === "function") {
       value = value();
     }
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+
     return value != null ? `${value}` : "";
   }
   abstract drawInternal(

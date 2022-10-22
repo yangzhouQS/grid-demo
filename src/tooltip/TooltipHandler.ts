@@ -11,7 +11,6 @@ const TOOLTIP_INSTANCE_FACTORY = {
 };
 
 function getTooltipInstanceInfo<T>(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   grid: ListGridAPI<T>,
   col: number,
   row: number

@@ -13,7 +13,6 @@ export function loadImage(src: string): Promise<HTMLImageElement> {
       then(): Promise<HTMLImageElement> {
         return this;
       },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any;
   }
   const img = new Image();

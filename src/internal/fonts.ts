@@ -16,7 +16,6 @@ if (isNode) {
     return false;
   };
 } else {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const fontFaceSet = (document as any).fonts;
   const legacy = !fontFaceSet;
   load = legacy

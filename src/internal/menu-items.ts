@@ -1,7 +1,6 @@
 import type { ColumnMenuItemOption, ColumnMenuItemOptions } from "../ts-types";
 /** @private */
 function extend<T, U>(a: T, b: U): T & U {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const o: any = {};
   for (const k in a) {
     o[k] = a[k];
@@ -25,9 +24,7 @@ export function normalize(
     return [];
   }
   if (Array.isArray(options)) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return (options as any).map(
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (e: any): ColumnMenuItemOption =>
         extend(e, { label: e.caption || e.label })
     );

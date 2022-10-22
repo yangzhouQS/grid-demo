@@ -109,9 +109,8 @@ export class InlineInputElement<T> {
       } catch (e) {
         //ignore
       }
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
       if ((document as any).selection) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const range = (input as any).createTextRange();
         range.collapse();
         range.moveEnd("character", end);

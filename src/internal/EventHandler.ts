@@ -14,7 +14,7 @@ type EventListenerObject = {
   target: EventHandlerTarget;
   type: string;
   listener: Listener;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   options: any[];
 };
 
@@ -25,23 +25,23 @@ export class EventHandler {
   on<TYPE extends keyof GlobalEventHandlersEventMap>(
     target: EventHandlerTarget,
     type: TYPE,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     listener: (event: GlobalEventHandlersEventMap[TYPE]) => any,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     ...options: any[]
   ): EventListenerId;
   on(
     target: EventHandlerTarget,
     type: string,
     listener: Listener,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     ...options: any[]
   ): EventListenerId;
   on(
     target: EventHandlerTarget,
     type: string,
     listener: Listener,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     ...options: any[]
   ): EventListenerId {
     if (target.addEventListener) {
@@ -60,9 +60,9 @@ export class EventHandler {
   once<TYPE extends keyof GlobalEventHandlersEventMap>(
     target: EventHandlerTarget,
     type: TYPE,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     listener: (event: GlobalEventHandlersEventMap[TYPE]) => any,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     ...options: any[]
   ): EventListenerId;
   once(
@@ -137,7 +137,7 @@ export class EventHandler {
       );
     }
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   fire(target: EventTarget, type: string, ...args: any[]): void {
     each(this._listeners, (obj) => {
       if (obj.target === target && obj.type === type) {
@@ -168,7 +168,7 @@ export class EventHandler {
   }
   dispose(): void {
     this.clear();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     (this as any)._listeners = null;
   }
 }

@@ -51,7 +51,7 @@ export {
 };
 export function of(
   columnStyle: ColumnStyleOption | null | undefined,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   record: any,
   StyleClassDef: typeof BaseStyle = Style
 ): BaseStyle {
@@ -63,7 +63,7 @@ export function of(
     } else if (record && (columnStyle as symbol) in record) {
       return of(record[columnStyle as string], record, StyleClassDef);
     }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     return new StyleClassDef(columnStyle as any);
   } else {
     return StyleClassDef.DEFAULT;

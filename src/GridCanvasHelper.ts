@@ -111,7 +111,7 @@ function getThemeColor<
     return gridThemeColor;
   }
   let defaultThemeColor: ColorDef;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   return ((args: StylePropertyFunctionArg): any => {
     const color = gridThemeColor(args);
     if (color != null) {
@@ -122,7 +122,6 @@ function getThemeColor<
     defaultThemeColor =
       defaultThemeColor || getChainSafe(themes.getDefault(), ...names);
     return getOrApply(defaultThemeColor, args);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   }) as any;
 }
 function testFontLoad<T>(

@@ -273,7 +273,6 @@ function calcNode(node: Node, context: CalcContext): number {
       case "/":
         return left / right;
       default:
-        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         throw new Error(`calc error. unknown operator: ${node.op.value}`);
     }
   } else if (node.nodeType === NODE_TYPE_UNIT) {

@@ -120,16 +120,16 @@ export interface DrawGridEventHandlersReturnMap {
 export type ChangedValueCellEvent<T> = CellAddress & {
   record: T;
   field: FieldDef<T>;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   value: any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   oldValue: any;
 };
 export type ChangedHeaderValueCellEvent = CellAddress & {
   field: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   value: any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   oldValue: any;
 };
 export type PasteRejectedValuesEvent<T> = {

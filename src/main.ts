@@ -76,7 +76,7 @@ export default {
     return getIcons();
   },
 };
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 Object.defineProperty(themes as any, "default", {
   enumerable: false,
   configurable: true,
@@ -87,7 +87,7 @@ Object.defineProperty(themes as any, "default", {
     themes.setDefault(defaultTheme);
   },
 });
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 Object.defineProperty(themes as any, "choices", {
   enumerable: false,
   configurable: true,

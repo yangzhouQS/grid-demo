@@ -53,7 +53,7 @@ export interface ColumnDefine<T> extends BaseHeaderDefine<T> {
 export interface HeaderData<T> {
   id: LayoutObjectId;
   caption?: string | (() => string);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   field?: any;
   headerIcon?: ColumnIconOption<never> | ColumnIconOption<never>[];
   style?: HeaderStyleOption | HeaderBaseStyle | null;

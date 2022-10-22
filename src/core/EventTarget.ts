@@ -86,7 +86,7 @@ export class EventTarget {
    * @param  {...*} args fire arguments
    * @return {*} the result of the last listener
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   fireListeners(type: string, ...args: any[]): any {
     if (!this[_]) {
       return [];

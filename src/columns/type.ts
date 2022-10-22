@@ -7,7 +7,7 @@ import type {
   MenuColumnOption,
   NumberColumnOption,
   PercentCompleteBarColumnOption,
-} from "../ts-types";
+} from "@/ts-types";
 import type { BaseColumn } from "./type/BaseColumn";
 import { BranchGraphColumn } from "./type/BranchGraphColumn";
 import { ButtonColumn } from "./type/ButtonColumn";
@@ -22,19 +22,18 @@ import { PercentCompleteBarColumn } from "./type/PercentCompleteBarColumn";
 import { RadioColumn } from "./type/RadioColumn";
 
 const TYPES = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   DEFAULT: new Column<any>(),
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   NUMBER: new NumberColumn<any>(),
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   CHECK: new CheckColumn<any>(),
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   RADIO: new RadioColumn<any>(),
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   BUTTON: new ButtonColumn<any>(),
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   IMAGE: new ImageColumn<any>(),
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   MULTILINETEXT: new MultilineTextColumn<any>(),
 };
 

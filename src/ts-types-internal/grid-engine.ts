@@ -83,7 +83,6 @@ export type BranchGraphColumnState<T> = Map<
 >;
 
 export type InputEditorState = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   element?: any;
 };
 

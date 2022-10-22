@@ -151,7 +151,6 @@ function toSimpleArray(
 
   let count = 0;
   ICON_PROP_KEYS.forEach((k) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const prop = (iconProps as any)[k];
     if (prop) {
       if (Array.isArray(prop)) {
@@ -163,9 +162,8 @@ function toSimpleArray(
   });
 
   ICON_PROP_KEYS.forEach((k) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const arr = toPropArray((iconProps as any)[k], count);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     (workData as any)[k] = arr;
   });
 
@@ -173,9 +171,8 @@ function toSimpleArray(
   for (let i = 0; i < count; i++) {
     const data = {} as SimpleColumnIconOption;
     ICON_PROP_KEYS.forEach((k) => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const val = (workData as any)[k][i];
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
       (data as any)[k] = val;
     });
     result.push(data);
@@ -190,7 +187,6 @@ function normarize(iconProps: SimpleColumnIconOption): SimpleColumnIconOption {
       continue;
     }
     if (isIconKey(k)) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       data[k] = iconProps[k] as any;
     }
   }
@@ -199,7 +195,6 @@ function normarize(iconProps: SimpleColumnIconOption): SimpleColumnIconOption {
     for (const k in prop) {
       if (isIconKey(k)) {
         if (iconProps[k] == null) {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           data[k] = prop[k] as any;
         }
       }
@@ -220,6 +215,5 @@ export function toNormalizeArray(
 export const iconPropKeys = ICON_PROP_KEYS;
 
 function isIconKey(k: string): k is IconPropKey {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return ICON_PROP_KEYS.indexOf(k as any) >= 0;
 }
