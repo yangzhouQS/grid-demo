@@ -1,12 +1,12 @@
 import {
-  BaseColumnOption,
-  BranchGraphColumnOption,
-  ButtonColumnOption,
-  ColumnTypeOption,
-  IconColumnOption,
-  MenuColumnOption,
-  NumberColumnOption,
-  PercentCompleteBarColumnOption,
+	BaseColumnOption,
+	BranchGraphColumnOption,
+	ButtonColumnOption,
+	ColumnTypeOption,
+	IconColumnOption,
+	MenuColumnOption,
+	NumberColumnOption,
+	PercentCompleteBarColumnOption,
 } from "@/ts-types";
 import { BaseColumn } from "./type/BaseColumn";
 import { BranchGraphColumn } from "./type/BranchGraphColumn";
@@ -22,19 +22,19 @@ import { PercentCompleteBarColumn } from "./type/PercentCompleteBarColumn";
 import { RadioColumn } from "./type/RadioColumn";
 
 const TYPES = {
-  DEFAULT: new Column<any>(),
+	DEFAULT: new Column<any>(),
 
-  NUMBER: new NumberColumn<any>(),
+	NUMBER: new NumberColumn<any>(),
 
-  CHECK: new CheckColumn<any>(),
+	CHECK: new CheckColumn<any>(),
 
-  RADIO: new RadioColumn<any>(),
+	RADIO: new RadioColumn<any>(),
 
-  BUTTON: new ButtonColumn<any>(),
+	BUTTON: new ButtonColumn<any>(),
 
-  IMAGE: new ImageColumn<any>(),
+	IMAGE: new ImageColumn<any>(),
 
-  MULTILINETEXT: new MultilineTextColumn<any>(),
+	MULTILINETEXT: new MultilineTextColumn<any>(),
 };
 
 /**
@@ -43,35 +43,36 @@ const TYPES = {
  * @memberof cheetahGrid.columns
  */
 export {
-  Column,
-  NumberColumn,
-  CheckColumn,
-  RadioColumn,
-  ButtonColumn,
-  ImageColumn,
-  PercentCompleteBarColumn,
-  IconColumn,
-  BranchGraphColumn,
-  MenuColumn,
-  MultilineTextColumn,
-  // types
-  BaseColumnOption,
-  BranchGraphColumnOption,
-  ButtonColumnOption,
-  IconColumnOption,
-  MenuColumnOption,
-  NumberColumnOption,
-  PercentCompleteBarColumnOption,
+	Column,
+	NumberColumn,
+	CheckColumn,
+	RadioColumn,
+	ButtonColumn,
+	ImageColumn,
+	PercentCompleteBarColumn,
+	IconColumn,
+	BranchGraphColumn,
+	MenuColumn,
+	MultilineTextColumn,
+	// types
+	BaseColumnOption,
+	BranchGraphColumnOption,
+	ButtonColumnOption,
+	IconColumnOption,
+	MenuColumnOption,
+	NumberColumnOption,
+	PercentCompleteBarColumnOption,
 };
+
 export function of<T>(
-  columnType: ColumnTypeOption | BaseColumn<T> | null | undefined
+	columnType: ColumnTypeOption | BaseColumn<T> | null | undefined
 ): BaseColumn<T> {
-  if (!columnType) {
-    return TYPES.DEFAULT;
-  } else if (typeof columnType === "string") {
-    const key = columnType.toUpperCase() as keyof typeof TYPES;
-    return TYPES[key] || of(null);
-  } else {
-    return columnType;
-  }
+	if (!columnType) {
+		return TYPES.DEFAULT;
+	} else if (typeof columnType === "string") {
+		const key = columnType.toUpperCase() as keyof typeof TYPES;
+		return TYPES[key] || of(null);
+	} else {
+		return columnType;
+	}
 }

@@ -11,6 +11,7 @@ import {
 	PercentCompleteBarStyleOption,
 	StyleOption,
 } from "@/ts-types";
+
 import { BaseStyle } from "./style/BaseStyle";
 import { ButtonStyle } from "./style/ButtonStyle";
 import { CheckStyle } from "./style/CheckStyle";
