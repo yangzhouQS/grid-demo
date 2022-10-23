@@ -4,7 +4,7 @@ import libCss from 'vite-plugin-libcss';
 import svgLoader from 'vite-svg-loader';
 import json from '@rollup/plugin-json';
 import commonjs from '@rollup/plugin-commonjs';
-import babel from 'vite-babel-plugin';
+import babel from '@rollup/plugin-babel';
 
 // vite.config.js
 export default defineConfig({
@@ -18,14 +18,14 @@ export default defineConfig({
 	// 设为false 可以避免 vite 清屏而错过在终端中打印某些关键信息
 	clearScreen: true,
 	plugins: [
-		babel(),
+		commonjs(),
+		babel({ babelHelpers: 'bundled' }),
 		svgLoader({
 			defaultImport: 'url' // or 'raw'
 		}),
 		splitVendorChunkPlugin(),
 		libCss(),
 		json(),
-		commonjs(),
 	],
 	build: {
 		target: 'modules',

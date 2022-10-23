@@ -1,14 +1,15 @@
 import {
-  ActionOption,
-  BaseActionOption,
-  ButtonActionOption,
-  ColumnActionOption,
-  EditorOption,
-  InlineInputEditorOption,
-  InlineMenuEditorOption,
-  RecordBoolean,
-  SmallDialogInputEditorOption,
+	ActionOption,
+	BaseActionOption,
+	ButtonActionOption,
+	ColumnActionOption,
+	EditorOption,
+	InlineInputEditorOption,
+	InlineMenuEditorOption,
+	RecordBoolean,
+	SmallDialogInputEditorOption,
 } from "@/ts-types";
+
 import { Action } from "./action/Action";
 import { BaseAction } from "./action/BaseAction";
 import { ButtonAction } from "./action/ButtonAction";
@@ -20,36 +21,39 @@ import { RadioEditor } from "./action/RadioEditor";
 import { SmallDialogInputEditor } from "./action/SmallDialogInputEditor";
 
 class ImmutableCheckEditor extends CheckEditor<any> {
-  get disabled(): RecordBoolean {
-    return this._disabled;
-  }
-  get readOnly(): RecordBoolean {
-    return this._readOnly;
-  }
+	get disabled(): RecordBoolean {
+		return this._disabled;
+	}
+
+	get readOnly(): RecordBoolean {
+		return this._readOnly;
+	}
 }
 
 class ImmutableRadioEditor extends RadioEditor<any> {
-  get disabled(): RecordBoolean {
-    return this._disabled;
-  }
-  get readOnly(): RecordBoolean {
-    return this._readOnly;
-  }
+	get disabled(): RecordBoolean {
+		return this._disabled;
+	}
+
+	get readOnly(): RecordBoolean {
+		return this._readOnly;
+	}
 }
 
 class ImmutableInputEditor extends SmallDialogInputEditor<any> {
-  get disabled(): RecordBoolean {
-    return this._disabled;
-  }
-  get readOnly(): RecordBoolean {
-    return this._readOnly;
-  }
+	get disabled(): RecordBoolean {
+		return this._disabled;
+	}
+
+	get readOnly(): RecordBoolean {
+		return this._readOnly;
+	}
 }
 
 export const ACTIONS = {
-  CHECK: new ImmutableCheckEditor(),
-  INPUT: new ImmutableInputEditor(),
-  RADIO: new ImmutableRadioEditor(),
+	CHECK: new ImmutableCheckEditor(),
+	INPUT: new ImmutableInputEditor(),
+	RADIO: new ImmutableRadioEditor(),
 };
 /**
  * column actions
@@ -57,33 +61,34 @@ export const ACTIONS = {
  * @memberof cheetahGrid.columns
  */
 export {
-  BaseAction,
-  Editor,
-  Action,
-  CheckEditor,
-  RadioEditor,
-  ButtonAction,
-  SmallDialogInputEditor,
-  InlineInputEditor,
-  InlineMenuEditor,
-  // types
-  ActionOption,
-  BaseActionOption,
-  ButtonActionOption,
-  EditorOption,
-  InlineInputEditorOption,
-  InlineMenuEditorOption,
-  SmallDialogInputEditorOption,
+	BaseAction,
+	Editor,
+	Action,
+	CheckEditor,
+	RadioEditor,
+	ButtonAction,
+	SmallDialogInputEditor,
+	InlineInputEditor,
+	InlineMenuEditor,
+	// types
+	ActionOption,
+	BaseActionOption,
+	ButtonActionOption,
+	EditorOption,
+	InlineInputEditorOption,
+	InlineMenuEditorOption,
+	SmallDialogInputEditorOption,
 };
+
 export function of<T>(
-  columnAction: ColumnActionOption | BaseAction<T> | null | undefined
+	columnAction: ColumnActionOption | BaseAction<T> | null | undefined
 ): BaseAction<T> | undefined {
-  if (!columnAction) {
-    return undefined;
-  } else if (typeof columnAction === "string") {
-    const key = columnAction.toUpperCase() as keyof typeof ACTIONS;
-    return ACTIONS[key] || of(null);
-  } else {
-    return columnAction;
-  }
+	if (!columnAction) {
+		return undefined;
+	} else if (typeof columnAction === "string") {
+		const key = columnAction.toUpperCase() as keyof typeof ACTIONS;
+		return ACTIONS[key] || of(null);
+	} else {
+		return columnAction;
+	}
 }

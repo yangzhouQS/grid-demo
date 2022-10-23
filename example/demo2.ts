@@ -2,8 +2,6 @@ import './styles/example.css';
 import { ListGrid, columns } from '../src/main';
 import { getListData } from './utils/generate';
 
-console.log(columns)
-debugger
 const listData = getListData(100);
 const headerColumns: any = [
 	{
