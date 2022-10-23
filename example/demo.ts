@@ -6,7 +6,7 @@ console.log(columns)
 debugger
 const listData = getListData(100);
 const headerColumns: any = [
-	{
+	/*{
 		caption: '序号', width: 100,
 		columnType: new columns.type.RowIndex,
 		style: {
@@ -23,7 +23,7 @@ const headerColumns: any = [
 			color: 'red',
 			font: '18px "-apple-system","BlinkMacSystemFont","PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑","Helvetica Neue",Helvetica,Arial,sans-serif',
 		}
-	},
+	},*/
 	{ field: 'username', caption: 'username', width: 200 },
 	{ field: 'phone', caption: 'phone', width: 200 },
 	{ field: 'email', caption: 'Email', width: 250 },

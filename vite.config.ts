@@ -42,7 +42,7 @@ export default defineConfig({
 			input: {
 				main: resolve(__dirname, 'example/demo.ts'),
 			},
-			external: [ 'vue' ],
+			external: [ 'vue', '@faker-js/faker' ],
 			output: {
 				dir: './dist/example',
 				// Provide global variables to use in the UMD build

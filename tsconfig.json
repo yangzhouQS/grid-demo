@@ -1,14 +1,28 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
+    "baseUrl": ".",
     "module": "ESNext",
+    "target": "ESNext",
+    "sourceMap": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "useDefineForClassFields": true,
     "outDir": "dist",
+    "declarationMap": false,
+    "declarationDir": "./typings",
+    "types": [
+      "canvasjs",
+      "node",
+      "svg-parser"
+    ],
+    "typeRoots": [
+      "./typings"
+    ],
+    // 编译过程中需要引入的库文件的列表
     "lib": [
       "ESNext",
-      "DOM",
-      "es2015.promise",
-      "es5"
+      "DOM"
     ],
     "moduleResolution": "Node",
     "allowJs": false,
@@ -16,24 +30,22 @@
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "noImplicitAny": true,
-    "noImplicitThis": true,
-    "experimentalDecorators": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "removeComments": false,
     "strict": true,
-    "sourceMap": true,
-    "jsx": "preserve",
     //    "isolatedModules": true,
     "noEmit": true,
-    "declaration": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "skipLibCheck": true,
     "strictPropertyInitialization": false,
-    "types": [
-      "node"
-    ],
+    // 忽略 this 的类型检查, Raise error on this expressions with an implied any type.
+    "noImplicitThis": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "removeComments": false,
+    "suppressImplicitAnyIndexErrors": true,
+    // 给错误和消息设置样式，使用颜色和上下文。
+    "pretty": true,
+    "jsx": "react",
     "paths": {
       // 根据别名配置相关路径
       "@/*": [
@@ -46,6 +58,13 @@
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "main.d.ts"
+  ],
+  "files": [
+    "src/main.ts"
+  ],
+  "exclude": [
+    "src/**/tests"
   ]
 }
